@@ -127,6 +127,7 @@ Submit.MouseButton1Click:Connect(function()
 		Box.Text = "Success Key !"
 		Main:TweenSize(UDim2.new(0,10,0,10),"Out","Quad",1,true)
         wait(.3)
+        	game.CoreGui.EvoKey:Destroy()
           Box.Text = loadstring(game:HttpGet("https://raw.githubusercontent.com/Quoctuonggg/quoctuongg/main/qtuongg.lua"))()
 		game.CoreGui.EvoKey:Destroy()
 	else
