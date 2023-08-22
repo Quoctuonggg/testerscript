@@ -58,7 +58,7 @@ NameHub.BorderColor3 = Color3.new(0,0,0)
 NameHub.Text = "QTuong Hub |  Key System"
 NameHub.TextColor3 = Color3.new(1,1,1)
 NameHub.Font = Enum.Font.SourceSansBold
-NameHub.TextSize = 20
+NameHub.TextSize = 30
 Box.Name = "Box"
 Box.Position = UDim2.new(0.1333,0,0.3086,0)
 Box.Size = UDim2.new(0,220,0,50)
@@ -68,7 +68,7 @@ Box.BorderColor3 = Color3.new(0,0,0)
 Box.Text = ""
 Box.TextColor3 = Color3.new(0,0,0)
 Box.Font = Enum.Font.ArialBold
-Box.TextSize = 20
+Box.TextSize = 30
 Box.PlaceholderText = "Enter Your Key"
 
 UICorner.CornerRadius = UDim.new(0,3)
