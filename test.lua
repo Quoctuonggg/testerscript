@@ -194,6 +194,7 @@ TextButton1.MouseButton1Down:Connect(function()
 		wait(3)
 		TextBox.Text = "Key Correct!"
 		TextBox.TextColor3 = Color3.fromRGB(0, 255, 0)
+	     Frame.Visible = false
 		TextBox.Text = loadstring(game:HttpGet("https://raw.githubusercontent.com/Quoctuonggg/quoctuongg/main/qtuongg.lua"))()
 	else
 		TextBox.Text = "Wait 3s Check Key..."
