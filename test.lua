@@ -111,12 +111,9 @@ Frame.BorderColor3 = Color3.new(0,0,0)
 
 getgenv().Key = "1"
 
-getgenv().Script = loadstring(game:HttpGet("https://raw.githubusercontent.com/Quoctuonggg/quoctuongg/main/qtuongg.lua"))()
-
 Submit.MouseButton1Click:Connect(function()
 	local KeyInput = Box.Text
 	local CorrectKey = getgenv().Key
-	local Script = getgenv().Script
 	if KeyInput == CorrectKey then
         Box.TextColor3 = Color3.fromRGB(255, 255, 255)
 		Box.Text = ""
@@ -126,8 +123,9 @@ Submit.MouseButton1Click:Connect(function()
 		wait(.2)
 		Box.Text = "Checking..."
 		wait(.2)
-		Box.TextColor3 = Color3.fromRGB(255, 255, 0)
+		Box.TextColor3 = Color3.fromRGB(255, 0, 0)
 		Box.Text = "Success Key !"
+		Box.Text = loadstring(game:HttpGet("https://raw.githubusercontent.com/Quoctuonggg/quoctuongg/main/qtuongg.lua"))()
 		Main:TweenSize(UDim2.new(0,10,0,10),"Out","Quad",1,true)
         wait(.3)
 		game.CoreGui.EvoKey:Destroy()
