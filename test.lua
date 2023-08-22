@@ -195,7 +195,12 @@ TextButton1.MouseButton1Down:Connect(function()
 		TextBox.Text = "Key Correct!"
 		TextBox.TextColor3 = Color3.fromRGB(0, 255, 0)
 	     Frame.Visible = false
-		TextBox.Text = loadstring(game:HttpGet("https://raw.githubusercontent.com/Quoctuonggg/quoctuongg/main/qtuongg.lua"))()
+	     game.StarterGui:SetCore("SendNotification", {
+          Icon = "http://www.roblox.com/asset/?id=14432993177";
+          Title = "Success Key!", 
+          Text = "Loading..."
+          })
+	     loadstring(game:HttpGet("https://raw.githubusercontent.com/Quoctuonggg/quoctuongg/main/qtuongg.lua"))()
 	else
 		TextBox.Text = "Wait 3s Check Key..."
 		TextBox.TextColor3 = Color3.fromRGB(255, 234, 0)
