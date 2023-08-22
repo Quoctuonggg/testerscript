@@ -1,137 +1,205 @@
-local EvoKey = Instance.new('ScreenGui', game.CoreGui)
-local Main = Instance.new('Frame', EvoKey)
-local DropShadowHolder = Instance.new('Frame', Main)
-local DropShadow = Instance.new('ImageLabel', DropShadowHolder)
-local Bar = Instance.new('Frame', Main)
-local TopBar = Instance.new('Frame', Main)
-local NameHub = Instance.new('TextLabel', Main)
-local Box = Instance.new('TextBox', Main)
-local Discord = Instance.new('TextButton', Main)
-local UICorner = Instance.new('UICorner', Discord)
-local Submit = Instance.new('TextButton', Main)
-local UICorner = Instance.new('UICorner', Submit)
-local GetKey = Instance.new('TextButton', Main)
-local Frame = Instance.new('Frame', Main)
 
-EvoKey.Name = "EvoKey"
-EvoKey.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-Main.Name = "Main"
-Main.Position = UDim2.new(0.1484,0,0.2428,0)
-Main.Size = UDim2.new(0,300,0,175)
-Main.BackgroundColor3 = Color3.new(0,0,0)
-Main.BorderSizePixel = 0
-Main.BorderColor3 = Color3.new(0,0,0)
-DropShadowHolder.Name = "DropShadowHolder"
-DropShadowHolder.Size = UDim2.new(1,0,1,0)
-DropShadowHolder.BackgroundTransparency = 1
-DropShadowHolder.BorderSizePixel = 0
-DropShadowHolder.ZIndex = 0
-DropShadow.Name = "DropShadow"
-DropShadow.Position = UDim2.new(0.5,0,0.5,0)
-DropShadow.Size = UDim2.new(1,47,1,47)
-DropShadow.BackgroundTransparency = 1
-DropShadow.BorderSizePixel = 0
-DropShadow.AnchorPoint = Vector2.new(0.5,0.5)
-DropShadow.Image = "rbxassetid://6015897843"
-DropShadow.ImageColor3 = Color3.new(0,0,0)
-DropShadow.ScaleType = Enum.ScaleType.Slice
-DropShadow.SliceCenter = Rect.new(49,49,450,450)
-DropShadow.ImageTransparency = 0.5
-DropShadow.ZIndex = 0
-Bar.Name = "Bar"
-Bar.Position = UDim2.new(0,0,0.2,0)
-Bar.Size = UDim2.new(0,300,0,7)
-Bar.BackgroundColor3 = Color3.new(1,1,1)
-Bar.BorderSizePixel = 0
-Bar.BorderColor3 = Color3.new(0,0,0)
-TopBar.Name = "TopBar"
-TopBar.Size = UDim2.new(0,300,0,35)
-TopBar.BackgroundColor3 = Color3.new(0.0392,0.0392,0.0392)
-TopBar.BorderSizePixel = 0
-TopBar.BorderColor3 = Color3.new(0,0,0)
-NameHub.Name = "NameHub"
-NameHub.Size = UDim2.new(0,200,0,35)
-NameHub.BackgroundColor3 = Color3.new(1,1,1)
-NameHub.BackgroundTransparency = 1
-NameHub.BorderSizePixel = 0
-NameHub.BorderColor3 = Color3.new(0,0,0)
-NameHub.Text = "QTuong Hub |  Key System"
-NameHub.TextColor3 = Color3.new(1,1,1)
-NameHub.Font = Enum.Font.SourceSansBold
-NameHub.TextSize = 30
-Box.Name = "Box"
-Box.Position = UDim2.new(0.1333,0,0.3086,0)
-Box.Size = UDim2.new(0,220,0,50)
-Box.BackgroundColor3 = Color3.new(0.0784,0.0784,0.0784)
-Box.BorderSizePixel = 0
-Box.BorderColor3 = Color3.new(0,0,0)
-Box.Text = ""
-Box.TextColor3 = Color3.new(0,0,0)
-Box.Font = Enum.Font.ArialBold
-Box.TextSize = 30
-Box.PlaceholderText = "Enter Your Key"
 
-UICorner.CornerRadius = UDim.new(0,3)
-Submit.Name = "Enter Key"
-Submit.Position = UDim2.new(0.53,0,0.7314,0)
-Submit.Size = UDim2.new(0,125,0,34)
-Submit.BackgroundColor3 = Color3.new(0.0784,0.0784,0.0784)
-Submit.BorderSizePixel = 0
-Submit.BorderColor3 = Color3.new(0,0,0)
-Submit.Text = "Enter Key"
-Submit.TextColor3 = Color3.new(1,1,1)
-Submit.Font = Enum.Font.SourceSans
-Submit.TextSize = 25
+ScreenGui = Instance.new("ScreenGui");
+Frame = Instance.new("Frame");
+UICorner = Instance.new("UICorner");
+UIStroke = Instance.new("UIStroke");
+Frame1 = Instance.new("Frame");
+UICorner1 = Instance.new("UICorner");
+UIStroke1 = Instance.new("UIStroke");
+Frame2 = Instance.new("Frame");
+UICorner2 = Instance.new("UICorner");
+UIStroke2 = Instance.new("UIStroke");
+ImageLabel = Instance.new("ImageLabel");
+UICorner3 = Instance.new("UICorner");
+Frame3 = Instance.new("Frame");
+UICorner4 = Instance.new("UICorner");
+UIStroke3 = Instance.new("UIStroke");
+TextLabel = Instance.new("TextLabel");
+TextLabel1 = Instance.new("TextLabel");
+TextBox = Instance.new("TextBox");
+UICorner5 = Instance.new("UICorner");
+UIStroke4 = Instance.new("UIStroke");
+TextButton = Instance.new("TextButton");
+UICorner6 = Instance.new("UICorner");
+UIStroke5 = Instance.new("UIStroke");
+TextButton1 = Instance.new("TextButton");
+UICorner7 = Instance.new("UICorner");
+UIStroke6 = Instance.new("UIStroke");
 
-UICorner.CornerRadius = UDim.new(0,3)
-GetKey.Name = "GetKey"
-GetKey.Position = UDim2.new(0.0533,0,0.7314,0)
-GetKey.Size = UDim2.new(0,125,0,34)
-GetKey.BackgroundColor3 = Color3.new(0.0784,0.0784,0.0784)
-GetKey.BackgroundTransparency = 1
-GetKey.BorderSizePixel = 0
-GetKey.BorderColor3 = Color3.new(0,0,0)
-GetKey.Text = "Get Key"
-GetKey.TextColor3 = Color3.new(1,1,1)
-GetKey.Font = Enum.Font.SourceSans
-GetKey.TextSize = 25
-Frame.Position = UDim2.new(0.6667,0,0,0)
-Frame.Size = UDim2.new(0,1,0,42)
-Frame.BackgroundColor3 = Color3.new(1,1,1)
+
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.Parent = game:GetService("CoreGui")
+
+Frame.AnchorPoint = Vector2.new(0.5, 0.5)
+Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Frame.BorderSizePixel = 0
-Frame.BorderColor3 = Color3.new(0,0,0)
+Frame.Position = UDim2.new(0.499399513, 0, 0.499320656, 0)
+Frame.Size = UDim2.new(0, 390, 0, 273)
+Frame.Parent = ScreenGui
 
-getgenv().Key = "1"
+UICorner.CornerRadius = UDim.new(0, 5)
+UICorner.Parent = Frame
 
-Submit.MouseButton1Click:Connect(function()
-	local KeyInput = Box.Text
-	local CorrectKey = getgenv().Key
-	if KeyInput == CorrectKey then
-        Box.TextColor3 = Color3.fromRGB(255, 255, 255)
-		Box.Text = ""
-		Box.Text = "Checking."
-		wait(.2)
-		Box.Text = "Checking.."
-		wait(.2)
-		Box.Text = "Checking..."
-		wait(.2)
-		Box.TextColor3 = Color3.fromRGB(255, 255, 0)
-		Box.Text = "Success Key !"
-		Main:TweenSize(UDim2.new(0,10,0,10),"Out","Quad",1,true)
-        wait(.3)
-        	game.CoreGui.EvoKey:Destroy()
-          Box.Text = loadstring(game:HttpGet("https://raw.githubusercontent.com/Quoctuonggg/quoctuongg/main/qtuongg.lua"))()
+UIStroke.Color = Color3.fromRGB(255, 255, 255)
+UIStroke.Parent = Frame
+
+Frame1.AnchorPoint = Vector2.new(0.5, 0.5)
+Frame1.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame1.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame1.BorderSizePixel = 0
+Frame1.Position = UDim2.new(0.153545901, 0, 0.219440565, 0)
+Frame1.Size = UDim2.new(0, 100, 0, 100)
+Frame1.Parent = Frame
+
+UICorner1.CornerRadius = UDim.new(0, 5)
+UICorner1.Parent = Frame1
+
+UIStroke1.Color = Color3.fromRGB(255, 255, 255)
+UIStroke1.Parent = Frame1
+
+Frame2.AnchorPoint = Vector2.new(0.5, 0.5)
+Frame2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame2.BorderSizePixel = 0
+Frame2.Position = UDim2.new(0.49354583, 0, 0.48944062, 0)
+Frame2.Size = UDim2.new(0, 90, 0, 90)
+Frame2.Parent = Frame1
+
+UICorner2.CornerRadius = UDim.new(0, 100)
+UICorner2.Parent = Frame2
+
+UIStroke2.Color = Color3.fromRGB(255, 255, 255)
+UIStroke2.Parent = Frame2
+
+ImageLabel.Image = "rbxassetid://14529090242"
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BackgroundTransparency = 1
+ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageLabel.BorderSizePixel = 0
+ImageLabel.Position = UDim2.new(0.000341796869, 0, 0.0141637167, 0)
+ImageLabel.Size = UDim2.new(0, 88, 0, 88)
+ImageLabel.Parent = Frame2
+
+UICorner3.CornerRadius = UDim.new(0, 100)
+UICorner3.Parent = ImageLabel
+
+Frame3.AnchorPoint = Vector2.new(0.5, 0.5)
+Frame3.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame3.BorderSizePixel = 0
+Frame3.Position = UDim2.new(0.639443099, 0, 0.219440565, 0)
+Frame3.Size = UDim2.new(0, 262, 0, 100)
+Frame3.Parent = Frame
+
+UICorner4.CornerRadius = UDim.new(0, 3)
+UICorner4.Parent = Frame3
+
+UIStroke3.Color = Color3.fromRGB(255, 255, 255)
+UIStroke3.Parent = Frame3
+
+TextLabel.Font = Enum.Font.GothamBold
+TextLabel.Text = "QTuong Hub "
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 25
+TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0.0753183141, 0, 0.116085969, 0)
+TextLabel.Size = UDim2.new(0, 210, 0, 41)
+TextLabel.Parent = Frame3
+
+TextLabel1.Font = Enum.Font.GothamBold
+TextLabel1.Text = "Key System"
+TextLabel1.TextColor3 = Color3.fromRGB(188.0000039935112, 188.0000039935112, 188.0000039935112)
+TextLabel1.TextSize = 25
+TextLabel1.TextTransparency = 0.5
+TextLabel1.TextWrapped = true
+TextLabel1.TextXAlignment = Enum.TextXAlignment.Left
+TextLabel1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel1.BackgroundTransparency = 1
+TextLabel1.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel1.BorderSizePixel = 0
+TextLabel1.Position = UDim2.new(0.0753183141, 0, 0.526085675, 0)
+TextLabel1.Size = UDim2.new(0, 144, 0, 33)
+TextLabel1.Parent = Frame3
+
+TextBox.CursorPosition = -1
+TextBox.Font = Enum.Font.Gotham
+TextBox.Text = "Paste Your Key Here..."
+TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.TextSize = 20
+TextBox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.BorderSizePixel = 0
+TextBox.Position = UDim2.new(0.0230769236, 0, 0.439560443, 0)
+TextBox.Size = UDim2.new(0, 371, 0, 68)
+TextBox.Parent = Frame
+
+UICorner5.CornerRadius = UDim.new(0, 2)
+UICorner5.Parent = TextBox
+
+UIStroke4.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke4.Color = Color3.fromRGB(255, 255, 255)
+UIStroke4.Parent = TextBox
+
+TextButton.Font = Enum.Font.GothamBold
+TextButton.Text = "GET KEY"
+TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.TextSize = 20
+TextButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.BackgroundTransparency = 0.8999999761581421
+TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.BorderSizePixel = 0
+TextButton.Position = UDim2.new(0.0230769236, 0, 0.732600749, 0)
+TextButton.Size = UDim2.new(0, 180, 0, 62)
+TextButton.Parent = Frame
+
+UICorner6.CornerRadius = UDim.new(0, 3)
+UICorner6.Parent = TextButton
+
+UIStroke5.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke5.Color = Color3.fromRGB(255, 255, 255)
+UIStroke5.Parent = TextButton
+
+TextButton1.Font = Enum.Font.GothamBold
+TextButton1.Text = "ENTER KEY"
+TextButton1.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton1.TextSize = 20
+TextButton1.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextButton1.BackgroundTransparency = 0.8999999761581421
+TextButton1.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton1.BorderSizePixel = 0
+TextButton1.Position = UDim2.new(0.512820542, 0, 0.732600749, 0)
+TextButton1.Size = UDim2.new(0, 180, 0, 62)
+TextButton1.Parent = Frame
+
+UICorner7.CornerRadius = UDim.new(0, 3)
+UICorner7.Parent = TextButton1
+
+UIStroke6.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke6.Color = Color3.fromRGB(255, 255, 255)
+UIStroke6.Parent = TextButton1
+
+--- Edit ---
+Frame.Active = true
+Frame.Draggable = true
+TextButton1.MouseButton1Down:Connect(function()
+	if TextBox.Text == "1" then--- dien key cua m vo
+		TextBox.Text = "Wait 3s Check Key..."
+		TextBox.TextColor3 = Color3.fromRGB(255, 234, 0)
+		wait(3)
+		TextBox.Text = "Key Correct!"
+		TextBox.TextColor3 = Color3.fromRGB(0, 255, 0)
+		TextBox.Text = loadstring(game:HttpGet("https://raw.githubusercontent.com/Quoctuonggg/quoctuongg/main/qtuongg.lua"))()
 	else
-		Box.Text = "Checking."
-		wait(.1)
-		Box.Text = "Checking.."
-		wait(.1)
-		Box.Text = "Checking..."
-		wait(.1)
-		Box.TextColor3 = Color3.fromRGB(255, 0, 0)
-		Box.Text = "Incorrect Key !"
-		wait(0.5)
-		Box.TextColor3 = Color3.fromRGB(0, 0, 0)
-		Box.Text = "Type Key Here ..."
+		TextBox.Text = "Wait 3s Check Key..."
+		TextBox.TextColor3 = Color3.fromRGB(255, 234, 0)
+		wait(3)
+		TextBox.Text = "Key Wrong!"
+		TextBox.TextColor3 = Color3.fromRGB(255, 0, 4)
 	end
 end)
