@@ -129,7 +129,6 @@ Submit.MouseButton1Click:Connect(function()
         wait(.3)
         	game.CoreGui.EvoKey:Destroy()
           Box.Text = loadstring(game:HttpGet("https://raw.githubusercontent.com/Quoctuonggg/quoctuongg/main/qtuongg.lua"))()
-		game.CoreGui.EvoKey:Destroy()
 	else
 		Box.Text = "Checking."
 		wait(.1)
