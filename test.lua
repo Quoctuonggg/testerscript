@@ -101,10 +101,10 @@ UIStroke3.Parent = Frame3
 
 TextLabel.Font = Enum.Font.GothamBold
 TextLabel.Text = "QTuong Hub"
-TextLabel.TextColor3 = Color3.fromRGB(224, 29, 29)
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.TextSize = 25
 TextLabel.TextXAlignment = Enum.TextXAlignment.Left
-TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundColor3 = Color3.fromRGB(224, 29, 29)
 TextLabel.BackgroundTransparency = 1
 TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel.BorderSizePixel = 0
