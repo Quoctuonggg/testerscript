@@ -42,7 +42,7 @@ Frame.Parent = ScreenGui
 UICorner.CornerRadius = UDim.new(0, 5)
 UICorner.Parent = Frame
 
-UIStroke.Color = Color3.fromRGB(255, 255, 255)
+UIStroke.Color = Color3.fromRGB(224, 29, 29)
 UIStroke.Parent = Frame
 
 Frame1.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -56,7 +56,7 @@ Frame1.Parent = Frame
 UICorner1.CornerRadius = UDim.new(0, 5)
 UICorner1.Parent = Frame1
 
-UIStroke1.Color = Color3.fromRGB(255, 255, 255)
+UIStroke1.Color = Color3.fromRGB(224, 29, 29)
 UIStroke1.Parent = Frame1
 
 Frame2.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -70,11 +70,11 @@ Frame2.Parent = Frame1
 UICorner2.CornerRadius = UDim.new(0, 100)
 UICorner2.Parent = Frame2
 
-UIStroke2.Color = Color3.fromRGB(255, 255, 255)
+UIStroke2.Color = Color3.fromRGB(224, 29, 29)
 UIStroke2.Parent = Frame2
 
-ImageLabel.Image = "rbxassetid://14529090242"
-ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.Image = "rbxassetid://14432993177"
+ImageLabel.BackgroundColor3 = Color3.fromRGB(224, 29, 29)
 ImageLabel.BackgroundTransparency = 1
 ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ImageLabel.BorderSizePixel = 0
@@ -96,15 +96,15 @@ Frame3.Parent = Frame
 UICorner4.CornerRadius = UDim.new(0, 3)
 UICorner4.Parent = Frame3
 
-UIStroke3.Color = Color3.fromRGB(255, 255, 255)
+UIStroke3.Color = Color3.fromRGB(224, 29, 29)
 UIStroke3.Parent = Frame3
 
 TextLabel.Font = Enum.Font.GothamBold
-TextLabel.Text = "QTuong Hub "
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.Text = "QTuong Hub"
+TextLabel.TextColor3 = Color3.fromRGB(224, 29, 29)
 TextLabel.TextSize = 25
 TextLabel.TextXAlignment = Enum.TextXAlignment.Left
-TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundColor3 = Color3.fromRGB(224, 29, 29)
 TextLabel.BackgroundTransparency = 1
 TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel.BorderSizePixel = 0
@@ -119,7 +119,7 @@ TextLabel1.TextSize = 25
 TextLabel1.TextTransparency = 0.5
 TextLabel1.TextWrapped = true
 TextLabel1.TextXAlignment = Enum.TextXAlignment.Left
-TextLabel1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel1.BackgroundColor3 = Color3.fromRGB(224, 29, 29)
 TextLabel1.BackgroundTransparency = 1
 TextLabel1.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel1.BorderSizePixel = 0
@@ -130,7 +130,7 @@ TextLabel1.Parent = Frame3
 TextBox.CursorPosition = -1
 TextBox.Font = Enum.Font.Gotham
 TextBox.Text = "Paste Your Key Here..."
-TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.TextColor3 = Color3.fromRGB(224, 29, 29)
 TextBox.TextSize = 20
 TextBox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 TextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -143,12 +143,12 @@ UICorner5.CornerRadius = UDim.new(0, 2)
 UICorner5.Parent = TextBox
 
 UIStroke4.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke4.Color = Color3.fromRGB(255, 255, 255)
+UIStroke4.Color = Color3.fromRGB(224, 29, 29)
 UIStroke4.Parent = TextBox
 
 TextButton.Font = Enum.Font.GothamBold
 TextButton.Text = "GET KEY"
-TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.TextColor3 = Color3.fromRGB(224, 29, 29)
 TextButton.TextSize = 20
 TextButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 TextButton.BackgroundTransparency = 0.8999999761581421
@@ -162,12 +162,12 @@ UICorner6.CornerRadius = UDim.new(0, 3)
 UICorner6.Parent = TextButton
 
 UIStroke5.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke5.Color = Color3.fromRGB(255, 255, 255)
+UIStroke5.Color = Color3.fromRGB(224, 29, 29)
 UIStroke5.Parent = TextButton
 
 TextButton1.Font = Enum.Font.GothamBold
-TextButton1.Text = "ENTER KEY"
-TextButton1.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton1.Text = "CHECK KEY"
+TextButton1.TextColor3 = Color3.fromRGB(224, 29, 29)
 TextButton1.TextSize = 20
 TextButton1.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 TextButton1.BackgroundTransparency = 0.8999999761581421
@@ -181,7 +181,7 @@ UICorner7.CornerRadius = UDim.new(0, 3)
 UICorner7.Parent = TextButton1
 
 UIStroke6.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke6.Color = Color3.fromRGB(255, 255, 255)
+UIStroke6.Color = Color3.fromRGB(224, 29, 29)
 UIStroke6.Parent = TextButton1
 
 --- Edit ---
