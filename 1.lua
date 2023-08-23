@@ -1,3 +1,4 @@
+LinkScript = "https://raw.githubusercontent.com/Quoctuonggg/quoctuongg/main/qtuongg.lua" --- điền cái link script vô, đây là ví dụ ---
 ScreenGui = Instance.new("ScreenGui");
 Frame = Instance.new("Frame");
 UICorner = Instance.new("UICorner");
@@ -181,7 +182,9 @@ UICorner7.Parent = TextButton1
 UIStroke6.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 UIStroke6.Color = Color3.fromRGB(224, 29, 29)
 UIStroke6.Parent = TextButton1
-
+--- Edit ---
+Frame.Active = true
+Frame.Draggable = true
 local foldername = "QTuong Hub"
 local filename = "Keysystem.json"
  
@@ -209,77 +212,30 @@ function loadSettings()
 end
 
 loadSettings()
-
-function SendWebhook()
-    local Webhook = ""
-    local data = {
-    ["embeds"] = {
-    ["avatar_url"] = "https://cdn.discordapp.com/attachments/1131046223772651621/1131054372055425065/th.jpg",
-    {
-        ["title"] = "**Auto Chest Webhook**",
-        ["url"] = "https://www.roblox.com/users/"..game.Players.LocalPlayer.UserId.."/profile",
-        ["description"] = "Players Execute Success Loading Key System",
-        ["color"] = tonumber(0000E6),
-        ["type"] = "rich",
-        ["fields"] =  {
-            {
-                ["name"] = "Username",
-                ["value"] = game.Players.LocalPlayer.Name,
-                ["inline"] = true
-            },
-            {
-                ["name"] = "Display Name",
-                ["value"] = game.Players.LocalPlayer.DisplayName,
-                ["inline"] = true
-            },
-            {
-                ["name"] = "HWID",
-                ["value"] = tostring(game:GetService("RbxAnalyticsService"):GetClientId()),
-                ["inline"] = false
-            },
-            {
-                ["name"] = "Key",
-                ["value"] = _G.Key1,
-                ["inline"] = false
-            }
-        },
-        ["thumbnail"] = {
-            ["url"] = "https://cdn.discordapp.com/attachments/1131046223772651621/1131054372055425065/th.jpg",
-            },
-        ["footer"] = {
-            ["text"] = os.date("%A".." // ".."%d".." ".."%B".." ".."%Y".." // ".."%X")
-        }
-    }
-    },
-    }
-    local newdata = game:GetService("HttpService"):JSONEncode(data)
-    local headers = {["content-type"] = "application/json"}
-    request = http_request or request or HttpPost or syn.request
-    local abcdef = {Url = Webhook, Body = newdata, Method = "POST", Headers = headers}
-    request(abcdef)
-end
-
-   getgenv().Key = "1"
+getgenv().Key = "1"
 
 if _G.Key1 == getgenv().Key then
-    print("Your Hwid :",game:GetService("RbxAnalyticsService"):GetClientId(),"Your Key :",_G.Key1)
     TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
     TextBox.Text = ""
-    TextBox.Text = "Checking."
-    wait(.2)
-    TextBox.Text = "Checking.."
-    wait(.2)
-    TextBox.Text = "Checking..."
-    wait(.2)
-    TextBox.TextColor3 = Color3.fromRGB(255, 255, 0)
-    TextBox.Text = "Success Key !"
-    game.TweenService:Create(Main, TweenInfo.new(5, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut),
-    {
-        Position = UDim2.new(500, 0, 0, 0)}
-):Play()
-    wait(.3)
-    game.CoreGui.ScreenGui:Destroy()
-    SendWebhook()
+    TextBox.Text = "Wait 3s Check Key..."
+	TextBox.TextColor3 = Color3.fromRGB(255, 234, 0)
+	wait(3)
+	TextBox.Text = "Key Correct!"
+	TextBox.TextColor3 = Color3.fromRGB(0, 255, 0)
+    loadstring(game:HttpGet(LinkScript))()
+    wait(1)
+    Frame.Visible = false
+else
+    TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+    TextBox.Text = ""
+    TextBox.Text = "Wait 3s Check Key..."
+	TextBox.TextColor3 = Color3.fromRGB(255, 234, 0)
+	wait(3)
+	TextBox.Text = "Key Wrong!"
+	TextBox.TextColor3 = Color3.fromRGB(255, 0, 0)
+	wait(1)
+    TextBox.Text = "Paste Your Key Here..."
+	TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 end
     TextButton1.MouseButton1Click:Connect(function()
 	local KeyInput = TextBox.Text
@@ -287,34 +243,30 @@ end
 	if KeyInput == CorrectKey then
         _G.Key1 = CorrectKey
         saveSettings()
-        SendWebhook()
         TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 		TextBox.Text = ""
 		TextBox.Text = "Checking."
-		wait(.2)
+		wait(0.5)
 		TextBox.Text = "Checking.."
-		wait(.2)
+		wait(0.5)
 		TextBox.Text = "Checking..."
-		wait(.2)
-		TextBox.TextColor3 = Color3.fromRGB(255, 255, 0)
-		TextBox.Text = "Success Key !"
-        game.TweenService:Create(Main, TweenInfo.new(5, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut),
-        {
-            Position = UDim2.new(500, 0, 0, 0)}
-    ):Play()
-        wait(.3)
-		game.CoreGui.ScreenGui:Destroy()
+		wait(0.5)
+		TextBox.TextColor3 = Color3.fromRGB(0, 255, 0)
+		TextBox.Text = "Key Correct!"
+        loadstring(game:HttpGet(LinkScript))()
+        wait(1)
+        Frame.Visible = false
 	else
 		TextBox.Text = "Checking."
-		wait(.1)
-		TextBox.Text = "Checking.."
-		wait(.1)
-		TextBox.Text = "Checking..."
-		wait(.1)
-		TextBox.TextColor3 = Color3.fromRGB(255, 0, 0)
-		TextBox.Text = "Incorrect Key !"
 		wait(0.5)
-		TextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
-		TextBox.Text = "Type Key Here ..."
+		TextBox.Text = "Checking.."
+		wait(0.5)
+		TextBox.Text = "Checking..."
+		wait(0.5)
+		TextBox.TextColor3 = Color3.fromRGB(255, 0, 0)
+		TextBox.Text = "Key Wrong!"
+		wait(1)
+		TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+		TextBox.Text = "Paste Your Key Here..."
 	end
 end)
