@@ -184,80 +184,6 @@ UIStroke6.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 UIStroke6.Color = Color3.fromRGB(224, 29, 29)
 UIStroke6.Parent = TextButton1
 
-function saveSettings()
-    local HttpService = game:GetService("HttpService")
-    local json = HttpService:JSONEncode(_G)
-    if (writefile) then
-        if isfolder(foldername) then
-            if isfile(filename) then
-                writefile(filename, json)
-            else
-                writefile(filename, json)
-            end
-        else
-            writefile(filename, json)
-        end
-    end
-end
-
-function loadSettings()
-    local HttpService = game:GetService("HttpService")
-    if isfile(filename) then
-        _G = HttpService:JSONDecode(readfile(filename))
-    end
-end
-
-loadSettings()
-
-function SendWebhook()
-    local Webhook = ""
-    local data = {
-    ["embeds"] = {
-    ["avatar_url"] = "https://cdn.discordapp.com/attachments/1131046223772651621/1131054372055425065/th.jpg",
-    {
-        ["title"] = "**Auto Chest Webhook**",
-        ["url"] = "https://www.roblox.com/users/"..game.Players.LocalPlayer.UserId.."/profile",
-        ["description"] = "Players Execute Success Loading Key System",
-        ["color"] = tonumber(0000E6),
-        ["type"] = "rich",
-        ["fields"] =  {
-            {
-                ["name"] = "Username",
-                ["value"] = game.Players.LocalPlayer.Name,
-                ["inline"] = true
-            },
-            {
-                ["name"] = "Display Name",
-                ["value"] = game.Players.LocalPlayer.DisplayName,
-                ["inline"] = true
-            },
-            {
-                ["name"] = "HWID",
-                ["value"] = tostring(game:GetService("RbxAnalyticsService"):GetClientId()),
-                ["inline"] = false
-            },
-            {
-                ["name"] = "Key",
-                ["value"] = _G.Key1,
-                ["inline"] = false
-            }
-        },
-        ["thumbnail"] = {
-            ["url"] = "https://cdn.discordapp.com/attachments/1131046223772651621/1131054372055425065/th.jpg",
-            },
-        ["footer"] = {
-            ["text"] = os.date("%A".." // ".."%d".." ".."%B".." ".."%Y".." // ".."%X")
-        }
-    }
-    },
-    }
-    local newdata = game:GetService("HttpService"):JSONEncode(data)
-    local headers = {["content-type"] = "application/json"}
-    request = http_request or request or HttpPost or syn.request
-    local abcdef = {Url = Webhook, Body = newdata, Method = "POST", Headers = headers}
-    request(abcdef)
-end
-
 --- Edit ---
 Frame.Active = true
 Frame.Draggable = true
@@ -271,8 +197,6 @@ game.StarterGui:SetCore("SendNotification", {
  end)
 TextButton1.MouseButton1Down:Connect(function()
 	if TextBox.Text == "1" then--- dien key cua m vo
-		saveSettings()
-          SendWebhook()
 		TextBox.Text = "Wait 3s Check Key..."
 		TextBox.TextColor3 = Color3.fromRGB(255, 234, 0)
 		wait(3)
