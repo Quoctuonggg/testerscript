@@ -256,7 +256,7 @@ function SendWebhook()
     request(abcdef)
 end
 
-   getgenv().Key = "Async"
+   getgenv().Key = "1"
 
 if _G.Key1 == getgenv().Key then
     print("Your Hwid :",game:GetService("RbxAnalyticsService"):GetClientId(),"Your Key :",_G.Key1)
@@ -275,7 +275,7 @@ if _G.Key1 == getgenv().Key then
         Position = UDim2.new(500, 0, 0, 0)}
 ):Play()
     wait(.3)
-    game.CoreGui.ScreenGui:Destroy()
+    Frame.Visible = false
     SendWebhook()
 end
     TextButton1.MouseButton1Click:Connect(function()
@@ -300,7 +300,7 @@ end
             Position = UDim2.new(500, 0, 0, 0)}
     ):Play()
         wait(.3)
-		game.CoreGui.ScreenGui:Destroy()
+		Frame.Visible = false
 	else
 		TextBox.Text = "Checking."
 		wait(.1)
