@@ -157,15 +157,7 @@ TextButton.BorderSizePixel = 0
 TextButton.Position = UDim2.new(0.0230769236, 0, 0.732600749, 0)
 TextButton.Size = UDim2.new(0, 180, 0, 62)
 TextButton.Parent = Frame
-TextButton.MouseButton1Click:Connect(function()
-setclipboard("Con Cac")
-TextButton.Text = "GET KEY"
-end)
-game.StarterGui:SetCore("SendNotification", {
-Icon = "http://www.roblox.com/asset/?id=14432993177";
-Title = "Copy Key!",
-Text = ""
-})
+
 UICorner6.CornerRadius = UDim.new(0, 3)
 UICorner6.Parent = TextButton
 
@@ -204,6 +196,7 @@ TextButton1.MouseButton1Down:Connect(function()
 		TextBox.TextColor3 = Color3.fromRGB(0, 255, 0)
 	     Frame.Visible = false
 	     saveSettings()
+	     loadSettings()
 	     game.StarterGui:SetCore("SendNotification", {
           Icon = "http://www.roblox.com/asset/?id=14432993177";
           Title = "Success Key!", 
