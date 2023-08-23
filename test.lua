@@ -166,7 +166,7 @@ UIStroke5.Color = Color3.fromRGB(224, 29, 29)
 UIStroke5.Parent = TextButton
 
 TextButton1.Font = Enum.Font.GothamBold
-TextButton1.Text = "ENTER KEY"
+TextButton1.Text = "CHECK KEY"
 TextButton1.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextButton1.TextSize = 20
 TextButton1.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
@@ -195,7 +195,6 @@ TextButton1.MouseButton1Down:Connect(function()
 		TextBox.Text = "Key Correct!"
 		TextBox.TextColor3 = Color3.fromRGB(0, 255, 0)
 	     Frame.Visible = false
-	     saveSettings()
 	     game.StarterGui:SetCore("SendNotification", {
           Icon = "http://www.roblox.com/asset/?id=14432993177";
           Title = "Success Key!", 
@@ -210,29 +209,3 @@ TextButton1.MouseButton1Down:Connect(function()
 		TextBox.TextColor3 = Color3.fromRGB(255, 0, 4)
 	end
 end)
-
-
-function saveSettings()
-    local HttpService = game:GetService("HttpService")
-    local json = HttpService:JSONEncode(_G)
-    if (writefile) then
-        if isfolder(foldername) then
-            if isfile(filename) then
-                writefile(filename, json)
-            else
-                writefile(filename, json)
-            end
-        else
-            writefile(filename, json)
-        end
-    end
-end
-
-function loadSettings()
-    local HttpService = game:GetService("HttpService")
-    if isfile(filename) then
-        _G = HttpService:JSONDecode(readfile(filename))
-    end
-end
-
-loadSettings()
