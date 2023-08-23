@@ -185,15 +185,27 @@ UIStroke6.Color = Color3.fromRGB(224, 29, 29)
 UIStroke6.Parent = TextButton1
 
 --- Edit ---
-        TextButton.Text = "Copy Success!"
+Frame.Active = true
+Frame.Draggable = true
+
+getgenv().HX = true
+wait()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ZoiIntra/MeMayBeo_Key/main/bin/saved"))()
+wait()
+_G.Key_KeyPass = _G.MMBunicode
+repeat wait(1) until getgenv().HX == true
+if getgenv().HX == true then
+    TextButton.MouseButton1Click:Connect(function()
+        TextButton.Text = "Copy Success"
         setclipboard("Paste To GetKey Link")
         wait(0.5)
         TextButton.Text = "GET KEY"
     end)
-Frame.Active = true
-Frame.Draggable = true
 TextButton1.MouseButton1Down:Connect(function()
-	if TextBox.Text == "1" then--- dien key cua m vo
+        local KeyInput = TextBox.Text
+        local CorrectKey = _G.Key_KeyPass
+     if KeyInput == CorrectKey then
+	if TextBox.Text == "" then--- dien key cua m vo
 		TextBox.Text = "Wait 3s Check Key..."
 		TextBox.TextColor3 = Color3.fromRGB(255, 234, 0)
 		wait(3)
@@ -213,8 +225,9 @@ TextButton1.MouseButton1Down:Connect(function()
 		wait(3)
 		TextBox.Text = "Key Wrong!"
 		TextBox.TextColor3 = Color3.fromRGB(255, 0, 4)
-	end
-end)
+        end
+    end)
+end
 
 
 function saveSettings()
