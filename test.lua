@@ -185,6 +185,8 @@ UIStroke6.Color = Color3.fromRGB(224, 29, 29)
 UIStroke6.Parent = TextButton1
 
 --- Edit ---
+Frame.Active = true
+Frame.Draggable = true
 function saveSettings()
     local HttpService = game:GetService("HttpService")
     local json = HttpService:JSONEncode(_G)
@@ -263,34 +265,22 @@ end
 
 if _G.Key1 == getgenv().Key then
     print("Your Hwid :",game:GetService("RbxAnalyticsService"):GetClientId(),"Your Key :",_G.Key1)
-    TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
-	     TextBox.Text == "" then--- dien key cua m vo
-		TextBox.Text = "Wait 3s Check Key..."
-		TextBox.TextColor3 = Color3.fromRGB(255, 234, 0)
-		wait(3)
-		TextBox.Text = "Key Correct!"
-		TextBox.TextColor3 = Color3.fromRGB(0, 255, 0)
-          Frame.Visible = false
-          SendWebhook()
+    TextBox.Text = ""
+    TextBox.Text = "Wait 3s Check Key..."
+    TextBox.TextColor3 = Color3.fromRGB(255, 234, 0)
+    wait(3)
+    TextBox.Text = "Key Correct!"
+    TextBox.TextColor3 = Color3.fromRGB(0, 255, 0)
+    Frame.Visible = false
+    SendWebhook()
 end
-Frame.Active = true
-Frame.Draggable = true
-TextButton.MouseButton1Click:Connect(function()
-game.StarterGui:SetCore("SendNotification", {
-      Icon = "http://www.roblox.com/asset/?id=14432993177";
-      Title = "QTuong Hub", 
-      Text = "Link Copied!"
-  })
- setclipboard("con cu")
- end)
-TextButton1.MouseButton1Down:Connect(function()
+TextButton1.MouseButton1Click:Connect(function()
 	     local KeyInput = TextBox.Text
-	     local CorrectKey = getgenv().Key
-	if KeyInput == CorrectKey then
+     	local CorrectKey = getgenv().Key
+     	if KeyInput == CorrectKey then
           _G.Key1 = CorrectKey
           saveSettings()
           SendWebhook()
-          TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 	     TextBox.Text == "" then--- dien key cua m vo
 		TextBox.Text = "Wait 3s Check Key..."
 		TextBox.TextColor3 = Color3.fromRGB(255, 234, 0)
