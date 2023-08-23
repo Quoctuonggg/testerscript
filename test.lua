@@ -196,7 +196,6 @@ TextButton1.MouseButton1Down:Connect(function()
 		TextBox.TextColor3 = Color3.fromRGB(0, 255, 0)
 	     Frame.Visible = false
 	     saveSettings()
-	     loadSettings()
 	     game.StarterGui:SetCore("SendNotification", {
           Icon = "http://www.roblox.com/asset/?id=14432993177";
           Title = "Success Key!", 
