@@ -156,7 +156,7 @@ TextButton.BorderSizePixel = 0
 TextButton.Position = UDim2.new(0.0230769236, 0, 0.732600749, 0)
 TextButton.Size = UDim2.new(0, 180, 0, 62)
 TextButton.Parent = Frame
-TextButton1.MouseButton1Click:Connect(function()
+TextButton.MouseButton1Click:Connect(function()
 game.StarterGui:SetCore("SendNotification", {
 Icon = "http://www.roblox.com/asset/?id=14432993177";
 Title = "Copy Success!", 
@@ -220,7 +220,7 @@ function loadSettings()
 end
 
 loadSettings()
-getgenv().Key = "11"
+getgenv().Key = "qtuong"
 
 if _G.Key1 == getgenv().Key then
      TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -231,8 +231,13 @@ if _G.Key1 == getgenv().Key then
 	wait(0.5)
 	TextBox.Text = "Checking..."
 	wait(0.5)
-	TextBox.Text = "Key Correct!"
 	TextBox.TextColor3 = Color3.fromRGB(0, 255, 0)
+	TextBox.Text = "Key Correct!"
+	game.StarterGui:SetCore("SendNotification", {
+      Icon = "http://www.roblox.com/asset/?id=14432993177";
+      Title = "Key Success!", 
+      Text = "Loading..."
+     })
 	wait(1)
      loadstring(game:HttpGet(LinkScript))()
      Frame.Visible = false
@@ -245,11 +250,11 @@ else
 	wait(0.5)
 	TextBox.Text = "Checking..."
 	wait(0.5)
-	TextBox.Text = "Key Wrong!"
 	TextBox.TextColor3 = Color3.fromRGB(255, 0, 0)
+	TextBox.Text = "Key Wrong!"
 	wait(1)
-	TextBox.Text = "Paste Your Key Here..."
 	TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+	TextBox.Text = "Paste Your Key Here..."
 end
     TextButton1.MouseButton1Click:Connect(function()
 	local KeyInput = TextBox.Text
@@ -265,22 +270,29 @@ end
 	     wait(0.5)
 	     TextBox.Text = "Checking..."
 	     wait(0.5)
-	     TextBox.Text = "Key Correct!"
 	     TextBox.TextColor3 = Color3.fromRGB(0, 255, 0)
+	     TextBox.Text = "Key Correct!"
+	     game.StarterGui:SetCore("SendNotification", {
+          Icon = "http://www.roblox.com/asset/?id=14432993177";
+          Title = "Key Success!", 
+          Text = "Loading..."
+          })
 	     wait(1)
           loadstring(game:HttpGet(LinkScript))()
           Frame.Visible = false
 	else
+     	TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+          TextBox.Text = ""
 		TextBox.Text = "Checking."
 		wait(0.5)
 		TextBox.Text = "Checking.."
 		wait(0.5)
 		TextBox.Text = "Checking..."
 		wait(0.5)
-		TextBox.Text = "Key Wrong!"
 		TextBox.TextColor3 = Color3.fromRGB(255, 0, 0)
+		TextBox.Text = "Key Wrong!"
 		wait(1)
-		TextBox.Text = "Paste Your Key Here..."
 		TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+		TextBox.Text = "Paste Your Key Here..."
 	end
 end)
