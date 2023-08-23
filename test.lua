@@ -187,6 +187,15 @@ UIStroke6.Parent = TextButton1
 --- Edit ---
 Frame.Active = true
 Frame.Draggable = true
+GetKey.MouseButton1Click:Connect(function()
+game.StarterGui:SetCore("SendNotification", {
+      Icon = "http://www.roblox.com/asset/?id=14432993177";
+      Title = "QTuong Hub", 
+      Text = "Link Copied!"
+  })
+ setclipboard("https://discord.gg/mFzWdBUn45")
+        TextButton.Text = "GET KEY"
+    end)
 TextButton1.MouseButton1Down:Connect(function()
 	if TextBox.Text == "1" then--- dien key cua m vo
 		TextBox.Text = "Wait 3s Check Key..."
