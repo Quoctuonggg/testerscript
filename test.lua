@@ -194,7 +194,6 @@ game.StarterGui:SetCore("SendNotification", {
       Text = "Link Copied!"
   })
  setclipboard("https://discord.gg/mFzWdBUn45")
-        TextButton.Text = "GET KEY"
     end)
 TextButton1.MouseButton1Down:Connect(function()
 	if TextBox.Text == "1" then--- dien key cua m vo
