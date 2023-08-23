@@ -187,7 +187,7 @@ UIStroke6.Parent = TextButton1
 --- Edit ---
 Frame.Active = true
 Frame.Draggable = true
-GetKey.MouseButton1Click:Connect(function()
+TextButton.MouseButton1Click:Connect(function()
 game.StarterGui:SetCore("SendNotification", {
       Icon = "http://www.roblox.com/asset/?id=14432993177";
       Title = "QTuong Hub", 
