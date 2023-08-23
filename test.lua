@@ -184,6 +184,22 @@ UIStroke6.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 UIStroke6.Color = Color3.fromRGB(224, 29, 29)
 UIStroke6.Parent = TextButton1
 
+function saveSettings()
+    local HttpService = game:GetService("HttpService")
+    local json = HttpService:JSONEncode(_G)
+    if (writefile) then
+        if isfolder(foldername) then
+            if isfile(filename) then
+                writefile(filename, json)
+            else
+                writefile(filename, json)
+            end
+        else
+            writefile(filename, json)
+        end
+    end
+end
+
 --- Edit ---
 Frame.Active = true
 Frame.Draggable = true
@@ -209,6 +225,7 @@ TextButton1.MouseButton1Down:Connect(function()
           Text = "Loading..."
           })
 	     loadstring(game:HttpGet("https://raw.githubusercontent.com/Quoctuonggg/quoctuongg/main/qtuongg.lua"))()
+	     saveSettings()
 	else
 		TextBox.Text = "Wait 3s Check Key..."
 		TextBox.TextColor3 = Color3.fromRGB(255, 234, 0)
