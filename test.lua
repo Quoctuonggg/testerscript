@@ -157,7 +157,15 @@ TextButton.BorderSizePixel = 0
 TextButton.Position = UDim2.new(0.0230769236, 0, 0.732600749, 0)
 TextButton.Size = UDim2.new(0, 180, 0, 62)
 TextButton.Parent = Frame
-
+TextButton.MouseButton1Click:Connect(function()
+game.StarterGui:SetCore("SendNotification", {
+      Icon = "http://www.roblox.com/asset/?id=14432993177";
+      Title = "QTuong Hub", 
+      Text = "Link Copied!"
+  })
+ setclipboard("con cu")
+ end)
+ 
 UICorner6.CornerRadius = UDim.new(0, 3)
 UICorner6.Parent = TextButton
 
@@ -200,37 +208,121 @@ function saveSettings()
     end
 end
 
---- Edit ---
-Frame.Active = true
-Frame.Draggable = true
-TextButton.MouseButton1Click:Connect(function()
-game.StarterGui:SetCore("SendNotification", {
-      Icon = "http://www.roblox.com/asset/?id=14432993177";
-      Title = "QTuong Hub", 
-      Text = "Link Copied!"
-  })
- setclipboard("con cu")
- end)
-TextButton1.MouseButton1Down:Connect(function()
-	if TextBox.Text == "1" then--- dien key cua m vo
-		TextBox.Text = "Wait 3s Check Key..."
-		TextBox.TextColor3 = Color3.fromRGB(255, 234, 0)
-		wait(3)
-		TextBox.Text = "Key Correct!"
-		TextBox.TextColor3 = Color3.fromRGB(0, 255, 0)
-	     Frame.Visible = false
-	     game.StarterGui:SetCore("SendNotification", {
-          Icon = "http://www.roblox.com/asset/?id=14432993177";
-          Title = "Success Key!", 
-          Text = "Loading..."
-          })
-	     loadstring(game:HttpGet("https://raw.githubusercontent.com/Quoctuonggg/quoctuongg/main/qtuongg.lua"))()
-	     saveSettings()
+function loadSettings()
+    local HttpService = game:GetService("HttpService")
+    if isfile(filename) then
+        _G = HttpService:JSONDecode(readfile(filename))
+    end
+end
+
+loadSettings()
+
+function SendWebhook()
+    local Webhook = ""
+    local data = {
+    ["embeds"] = {
+    ["avatar_url"] = "https://cdn.discordapp.com/attachments/1131046223772651621/1131054372055425065/th.jpg",
+    {
+        ["title"] = "**Auto Chest Webhook**",
+        ["url"] = "https://www.roblox.com/users/"..game.Players.LocalPlayer.UserId.."/profile",
+        ["description"] = "Players Execute Success Loading Key System",
+        ["color"] = tonumber(0000E6),
+        ["type"] = "rich",
+        ["fields"] =  {
+            {
+                ["name"] = "Username",
+                ["value"] = game.Players.LocalPlayer.Name,
+                ["inline"] = true
+            },
+            {
+                ["name"] = "Display Name",
+                ["value"] = game.Players.LocalPlayer.DisplayName,
+                ["inline"] = true
+            },
+            {
+                ["name"] = "HWID",
+                ["value"] = tostring(game:GetService("RbxAnalyticsService"):GetClientId()),
+                ["inline"] = false
+            },
+            {
+                ["name"] = "Key",
+                ["value"] = _G.Key1,
+                ["inline"] = false
+            }
+        },
+        ["thumbnail"] = {
+            ["url"] = "https://cdn.discordapp.com/attachments/1131046223772651621/1131054372055425065/th.jpg",
+            },
+        ["footer"] = {
+            ["text"] = os.date("%A".." // ".."%d".." ".."%B".." ".."%Y".." // ".."%X")
+        }
+    }
+    },
+    }
+    local newdata = game:GetService("HttpService"):JSONEncode(data)
+    local headers = {["content-type"] = "application/json"}
+    request = http_request or request or HttpPost or syn.request
+    local abcdef = {Url = Webhook, Body = newdata, Method = "POST", Headers = headers}
+    request(abcdef)
+end
+
+   getgenv().Key = "Async"
+
+--- Edit --
+if _G.Key1 == getgenv().Key then
+    print("Your Hwid :",game:GetService("RbxAnalyticsService"):GetClientId(),"Your Key :",_G.Key1)
+    TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+    TextBox.Text = ""
+    TextBox.Text = "Checking."
+    wait(.2)
+    TextBox.Text = "Checking.."
+    wait(.2)
+    TextBox.Text = "Checking..."
+    wait(.2)
+    TextBox.TextColor3 = Color3.fromRGB(255, 255, 0)
+    TextBox.Text = "Success Key !"
+    game.TweenService:Create(Main, TweenInfo.new(5, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut),
+    {
+        Position = UDim2.new(500, 0, 0, 0)}
+):Play()
+    wait(.3)
+    Frame.Visible = false
+    SendWebhook()
+end
+    TextButton1.MouseButton1Click:Connect(function()
+	local KeyInput = TextBox.Text
+	local CorrectKey = getgenv().Key
+	if KeyInput == CorrectKey then
+        _G.Key1 = CorrectKey
+        saveSettings()
+        SendWebhook()
+        TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+		TextBox.Text = ""
+		TextBox.Text = "Checking."
+		wait(.2)
+		TextBox.Text = "Checking.."
+		wait(.2)
+		TextBox.Text = "Checking..."
+		wait(.2)
+		TextBox.TextColor3 = Color3.fromRGB(255, 255, 0)
+		TextBox.Text = "Success Key !"
+        game.TweenService:Create(Main, TweenInfo.new(5, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut),
+        {
+            Position = UDim2.new(500, 0, 0, 0)}
+    ):Play()
+        wait(.3)
+		Frame.Visible = false
 	else
-		TextBox.Text = "Wait 3s Check Key..."
-		TextBox.TextColor3 = Color3.fromRGB(255, 234, 0)
-		wait(3)
-		TextBox.Text = "Key Wrong!"
-		TextBox.TextColor3 = Color3.fromRGB(255, 0, 4)
+		TextBox.Text = "Checking."
+		wait(.1)
+		TextBox.Text = "Checking.."
+		wait(.1)
+		TextBox.Text = "Checking..."
+		wait(.1)
+		TextBox.TextColor3 = Color3.fromRGB(255, 0, 0)
+		TextBox.Text = "Incorrect Key !"
+		wait(0.5)
+		TextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
+		TextBox.Text = "Type Key Here ..."
 	end
 end)
