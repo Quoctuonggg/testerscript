@@ -156,6 +156,14 @@ TextButton.BorderSizePixel = 0
 TextButton.Position = UDim2.new(0.0230769236, 0, 0.732600749, 0)
 TextButton.Size = UDim2.new(0, 180, 0, 62)
 TextButton.Parent = Frame
+TextButton1.MouseButton1Click:Connect(function()
+game.StarterGui:SetCore("SendNotification", {
+Icon = "http://www.roblox.com/asset/?id=14432993177";
+Title = "Copy Success!", 
+Text = "Link Copied!"
+})
+setclipboard("https://discord.gg/")
+end)
 
 UICorner6.CornerRadius = UDim.new(0, 3)
 UICorner6.Parent = TextButton
@@ -212,29 +220,35 @@ function loadSettings()
 end
 
 loadSettings()
-getgenv().Key = "2"
+getgenv().Key = "11"
 
 if _G.Key1 == getgenv().Key then
-    TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
-    TextBox.Text = ""
-    TextBox.Text = "Wait 3s Check Key..."
-	TextBox.TextColor3 = Color3.fromRGB(255, 234, 0)
-	wait(3)
+     TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+	TextBox.Text = ""
+	TextBox.Text = "Checking."
+	wait(0.5)
+	TextBox.Text = "Checking.."
+	wait(0.5)
+	TextBox.Text = "Checking..."
+	wait(0.5)
 	TextBox.Text = "Key Correct!"
 	TextBox.TextColor3 = Color3.fromRGB(0, 255, 0)
-    loadstring(game:HttpGet(LinkScript))()
-    wait(1)
-    Frame.Visible = false
+	wait(1)
+     loadstring(game:HttpGet(LinkScript))()
+     Frame.Visible = false
 else
-    TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
-    TextBox.Text = ""
-    TextBox.Text = "Wait 3s Check Key..."
-	TextBox.TextColor3 = Color3.fromRGB(255, 234, 0)
-	wait(3)
+     TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+     TextBox.Text = ""
+     TextBox.Text = "Checking."
+ 	wait(0.5)
+ 	TextBox.Text = "Checking.."
+	wait(0.5)
+	TextBox.Text = "Checking..."
+	wait(0.5)
 	TextBox.Text = "Key Wrong!"
 	TextBox.TextColor3 = Color3.fromRGB(255, 0, 0)
 	wait(1)
-    TextBox.Text = "Paste Your Key Here..."
+	TextBox.Text = "Paste Your Key Here..."
 	TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 end
     TextButton1.MouseButton1Click:Connect(function()
@@ -243,19 +257,19 @@ end
 	if KeyInput == CorrectKey then
         _G.Key1 = CorrectKey
         saveSettings()
-        TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+          TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 		TextBox.Text = ""
 		TextBox.Text = "Checking."
-		wait(0.5)
-		TextBox.Text = "Checking.."
-		wait(0.5)
-		TextBox.Text = "Checking..."
-		wait(0.5)
-		TextBox.TextColor3 = Color3.fromRGB(0, 255, 0)
-		TextBox.Text = "Key Correct!"
-        loadstring(game:HttpGet(LinkScript))()
-        wait(1)
-        Frame.Visible = false
+	     wait(0.5)
+	     TextBox.Text = "Checking.."
+	     wait(0.5)
+	     TextBox.Text = "Checking..."
+	     wait(0.5)
+	     TextBox.Text = "Key Correct!"
+	     TextBox.TextColor3 = Color3.fromRGB(0, 255, 0)
+	     wait(1)
+          loadstring(game:HttpGet(LinkScript))()
+          Frame.Visible = false
 	else
 		TextBox.Text = "Checking."
 		wait(0.5)
@@ -263,10 +277,10 @@ end
 		wait(0.5)
 		TextBox.Text = "Checking..."
 		wait(0.5)
-		TextBox.TextColor3 = Color3.fromRGB(255, 0, 0)
 		TextBox.Text = "Key Wrong!"
+		TextBox.TextColor3 = Color3.fromRGB(255, 0, 0)
 		wait(1)
-		TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 		TextBox.Text = "Paste Your Key Here..."
+		TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 	end
 end)
