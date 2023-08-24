@@ -1,4 +1,4 @@
-LinkScript = "https://raw.githubusercontent.com/Quoctuonggg/quoctuongg/main/qtuongg.lua" --- điền cái link script vô, đây là ví dụ ---
+LinkScript = "https://raw.githubusercontent.com/Quoctuonggg/quoctuongg/main/qtuongg.lua" --- Điền Script Vào Đây ---
 ScreenGui = Instance.new("ScreenGui");
 Frame = Instance.new("Frame");
 UICorner = Instance.new("UICorner");
@@ -159,10 +159,10 @@ TextButton.Parent = Frame
 TextButton.MouseButton1Click:Connect(function()
 game.StarterGui:SetCore("SendNotification", {
 Icon = "http://www.roblox.com/asset/?id=14432993177";
-Title = "Copy Success!", 
-Text = "Link Copied!"
+Title = "QTuong Hub", 
+Text = "Copy Success!"
 })
-setclipboard("https://discord.gg/")
+setclipboard("Key : qtuongcuto")
 end)
 
 UICorner6.CornerRadius = UDim.new(0, 3)
@@ -220,7 +220,7 @@ function loadSettings()
 end
 
 loadSettings()
-getgenv().Key = "qtuong"
+getgenv().Key = "qtuongcuto"
 
 if _G.Key1 == getgenv().Key then
      TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -235,8 +235,8 @@ if _G.Key1 == getgenv().Key then
 	TextBox.Text = "Key Correct!"
 	game.StarterGui:SetCore("SendNotification", {
       Icon = "http://www.roblox.com/asset/?id=14432993177";
-      Title = "Key Success!", 
-      Text = "Loading..."
+      Title = "QTuong Hub", 
+      Text = "Key Success!"
      })
 	wait(1)
      loadstring(game:HttpGet(LinkScript))()
@@ -274,8 +274,8 @@ end
 	     TextBox.Text = "Key Correct!"
 	     game.StarterGui:SetCore("SendNotification", {
           Icon = "http://www.roblox.com/asset/?id=14432993177";
-          Title = "Key Success!", 
-          Text = "Loading..."
+          Title = "QTuong Hub", 
+          Text = "Key Success!"
           })
 	     wait(1)
           loadstring(game:HttpGet(LinkScript))()
