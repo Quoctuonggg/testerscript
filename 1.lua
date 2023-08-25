@@ -1,4 +1,4 @@
-LinkScript = "https://raw.githubusercontent.com/KazeOnTop/Rice-Anti-Afk/main/Wind" --- điền cái link script vô, đây là ví dụ ---
+LinkScript = "https://raw.githubusercontent.com/Quoctuonggg/quoctuongg/main/qtuongg.lua" --- điền cái link script vô, đây là ví dụ ---
 ScreenGui = Instance.new("ScreenGui");
 Frame = Instance.new("Frame");
 UICorner = Instance.new("UICorner");
