@@ -1,5 +1,4 @@
-
-
+LinkScript = "https://raw.githubusercontent.com/Quoctuonggg/quoctuongg/main/qtuongg.lua" --- Điền Script Vào Đây ---
 ScreenGui = Instance.new("ScreenGui");
 Frame = Instance.new("Frame");
 UICorner = Instance.new("UICorner");
@@ -195,23 +194,84 @@ UIStroke6.Parent = TextButton1
 --- Edit ---
 Frame.Active = true
 Frame.Draggable = true
-TextButton1.MouseButton1Down:Connect(function()
-	if TextBox.Text == "" then--- dien key cua m vo
+local foldername = "QTuong Hub"
+local filename = "Keysystem.json"
+ 
+function saveSettings()
+    local HttpService = game:GetService("HttpService")
+    local json = HttpService:JSONEncode(_G)
+    if (writefile) then
+        if isfolder(foldername) then
+            if isfile(filename) then
+                writefile(filename, json)
+            else
+                writefile(filename, json)
+            end
+        else
+            writefile(filename, json)
+        end
+    end
+end
+
+function loadSettings()
+    local HttpService = game:GetService("HttpService")
+    if isfile(filename) then
+        _G = HttpService:JSONDecode(readfile(filename))
+    end
+end
+
+loadSettings()
+getgenv().Key = "1"
+if _G.Key1 == getgenv().Key then
+		TextBox.Text = ""
 		TextBox.Text = "Checking."
 	     wait(0.5)
 	     TextBox.Text = "Checking.."
 	     wait(0.5)
 	     TextBox.Text = "Checking..."
 	     wait(0.5)
+          TextBox.TextColor3 = Color3.fromRGB(0, 255, 0)
 	     TextBox.Text = "Valid Key!!"
-	     TextBox.TextColor3 = Color3.fromRGB(0, 255, 0)
 	     game.StarterGui:SetCore("SendNotification", {
           Icon = "http://www.roblox.com/asset/?id=14432993177";
           Title = "QTuong Hub", 
           Text = "Key Success!"
           })
 	     wait(1)
-          loadstring(game:HttpGet(loadstring(game:HttpGet("https://raw.githubusercontent.com/Quoctuonggg/quoctuongg/main/qtuongg.lua"))()))()
+          loadstring(game:HttpGet(LinkScript))()
+          Frame.Visible = false
+      else
+		TextBox.Text = "Checking."
+		wait(0.5)
+		TextBox.Text = "Checking.."
+		wait(0.5)
+		TextBox.Text = "Checking..."
+		wait(0.5)
+		TextBox.TextColor3 = Color3.fromRGB(255, 0, 0)
+		TextBox.Text = "Invalid Key!!"
+end
+    TextButton1.MouseButton1Click:Connect(function()
+	local KeyInput = TextBox.Text
+	local CorrectKey = getgenv().Key
+	if KeyInput == CorrectKey then
+        _G.Key1 = CorrectKey
+        saveSettings()
+		TextBox.Text = ""
+		TextBox.Text = "Checking."
+	     wait(0.5)
+	     TextBox.Text = "Checking.."
+	     wait(0.5)
+	     TextBox.Text = "Checking..."
+	     wait(0.5)
+          TextBox.TextColor3 = Color3.fromRGB(0, 255, 0)
+	     TextBox.Text = "Valid Key!!"
+	     game.StarterGui:SetCore("SendNotification", {
+          Icon = "http://www.roblox.com/asset/?id=14432993177";
+          Title = "QTuong Hub", 
+          Text = "Key Success!"
+          })
+	     wait(1)
+          loadstring(game:HttpGet(LinkScript))()
           Frame.Visible = false
 	else
 		TextBox.Text = "Checking."
@@ -222,8 +282,5 @@ TextButton1.MouseButton1Down:Connect(function()
 		wait(0.5)
 		TextBox.TextColor3 = Color3.fromRGB(255, 0, 0)
 		TextBox.Text = "Invalid Key!!"
-		wait(1)
-		TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
-		TextBox.Text = "Paste Your Key Here..."
 	end
 end)
