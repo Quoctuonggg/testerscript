@@ -214,76 +214,76 @@ function saveSettings()
 end
 getgenv().Key = "2"
 if _G.Key1 == getgenv().Key then
-          TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
-		TextBox.Text = ""
-		TextBox.Text = "Checking."
-	     wait(0.5)
-	     TextBox.Text = "Checking.."
-	     wait(0.5)
-	     TextBox.Text = "Checking..."
-	     wait(0.5)
-          TextBox.TextColor3 = Color3.fromRGB(0, 255, 0)
-	     TextBox.Text = "Valid Key!!"
-	     game.StarterGui:SetCore("SendNotification", {
-          Icon = "http://www.roblox.com/asset/?id=14432993177";
-          Title = "QTuong Hub", 
-          Text = "Key Success!"
-          })
-	     wait(1)
-          loadstring(game:HttpGet(LinkScript))()
-          Frame.Visible = false
-      else
-          TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
-          TextBox.Text = ""
-		TextBox.Text = "Checking."
-		wait(0.5)
-		TextBox.Text = "Checking.."
-		wait(0.5)
-		TextBox.Text = "Checking..."
-		wait(0.5)
-		TextBox.TextColor3 = Color3.fromRGB(255, 0, 0)
-		TextBox.Text = "Invalid Key!!"
-	     wait(1)
-		TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
-		TextBox.Text = "Paste Your Key Here..."
+     TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+	TextBox.Text = ""
+	TextBox.Text = "Checking."
+	wait(0.5)
+	TextBox.Text = "Checking.."
+	wait(0.5)
+	TextBox.Text = "Checking..."
+	wait(0.5)
+	game.StarterGui:SetCore("SendNotification", {
+	Icon = "http://www.roblox.com/asset/?id=14432993177";
+	Title = "QTuong Hub", 
+	Text = "Valid Key!!"
+	})
+	wait(1)
+	loadstring(game:HttpGet(LinkScript))()
+	Frame.Visible = false
+else
+	TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+	TextBox.Text = ""
+	TextBox.Text = "Checking."
+	wait(0.5)
+	TextBox.Text = "Checking.."
+	wait(0.5)
+	TextBox.Text = "Checking..."
+	wait(0.5)
+	game.StarterGui:SetCore("SendNotification", {
+	Icon = "http://www.roblox.com/asset/?id=14432993177";
+	Title = "QTuong Hub", 
+	Text = "Invalid Key!!"
+	})
+	TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+	TextBox.Text = "Paste Your Key Here..."
 end
-    TextButton1.MouseButton1Down:Connect(function()
-	local KeyInput = TextBox.Text
-	local CorrectKey = getgenv().Key
-	if KeyInput == CorrectKey then
-        _G.Key1 = CorrectKey
-        saveSettings()
-		TextBox.Text = ""
-          TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
-		TextBox.Text = "Checking."
-	     wait(0.5)
-	     TextBox.Text = "Checking.."
-	     wait(0.5)
-	     TextBox.Text = "Checking..."
-	     wait(0.5)
-	     TextBox.Text = "Valid Key!!"
-          TextBox.TextColor3 = Color3.fromRGB(0, 255, 0)
-	     game.StarterGui:SetCore("SendNotification", {
-          Icon = "http://www.roblox.com/asset/?id=14432993177";
-          Title = "QTuong Hub", 
-          Text = "Key Success!"
-          })
-	     wait(1)
-          loadstring(game:HttpGet(LinkScript))()
-          Frame.Visible = false
-	else
-          TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
-          TextBox.Text = ""
-		TextBox.Text = "Checking."
-		wait(0.5)
-		TextBox.Text = "Checking.."
-		wait(0.5)
-		TextBox.Text = "Checking..."
-		wait(0.5)
-		TextBox.TextColor3 = Color3.fromRGB(255, 0, 0)
-		TextBox.Text = "Invalid Key!!"
-	     wait(1)
-		TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
-		TextBox.Text = "Paste Your Key Here..."
+TextButton1.MouseButton1Click:Connect(function()
+local KeyInput = TextBox.Text
+local CorrectKey = getgenv().Key
+if KeyInput == CorrectKey then
+	_G.Key1 = CorrectKey
+	saveSettings()
+	TextBox.Text = ""
+	TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+	TextBox.Text = "Checking."
+     wait(0.5)
+     TextBox.Text = "Checking.."
+     wait(0.5)
+     TextBox.Text = "Checking..."
+     wait(0.5)
+	game.StarterGui:SetCore("SendNotification", {
+	Icon = "http://www.roblox.com/asset/?id=14432993177";
+	Title = "QTuong Hub", 
+	Text = "Valid Key!!"
+	})
+     wait(1)
+	loadstring(game:HttpGet(LinkScript))()
+	Frame.Visible = false
+else
+	TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+	TextBox.Text = ""
+	TextBox.Text = "Checking."
+	wait(0.5)
+	TextBox.Text = "Checking.."
+	wait(0.5)
+	TextBox.Text = "Checking..."
+	wait(0.5)
+	game.StarterGui:SetCore("SendNotification", {
+	Icon = "http://www.roblox.com/asset/?id=14432993177";
+	Title = "QTuong Hub", 
+	Text = "Invalid Key!!"
+	})
+	TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+	TextBox.Text = "Paste Your Key Here..."
 	end
 end)
