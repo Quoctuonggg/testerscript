@@ -196,7 +196,6 @@ Frame.Active = true
 Frame.Draggable = true
 local foldername = "QTuong Hub"
 local filename = "Keysystem.json"
- 
 function saveSettings()
     local HttpService = game:GetService("HttpService")
     local json = HttpService:JSONEncode(_G)
@@ -212,6 +211,13 @@ function saveSettings()
         end
     end
 end
+function loadSettings()
+    local HttpService = game:GetService("HttpService")
+    if isfile(filename) then
+        _G = HttpService:JSONDecode(readfile(filename))
+    end
+end
+loadSettings()
 getgenv().Key = "2"
 if _G.Key1 == getgenv().Key then
      TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -225,7 +231,7 @@ if _G.Key1 == getgenv().Key then
 	game.StarterGui:SetCore("SendNotification", {
 	Icon = "http://www.roblox.com/asset/?id=14432993177";
 	Title = "QTuong Hub", 
-	Text = "Valid Key!!"
+	Text = "Valid Key!"
 	})
 	wait(1)
 	loadstring(game:HttpGet(LinkScript))()
@@ -242,7 +248,7 @@ else
 	game.StarterGui:SetCore("SendNotification", {
 	Icon = "http://www.roblox.com/asset/?id=14432993177";
 	Title = "QTuong Hub", 
-	Text = "Invalid Key!!"
+	Text = "Invalid Key!"
 	})
 	TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 	TextBox.Text = "Paste Your Key Here..."
@@ -264,7 +270,7 @@ if KeyInput == CorrectKey then
 	game.StarterGui:SetCore("SendNotification", {
 	Icon = "http://www.roblox.com/asset/?id=14432993177";
 	Title = "QTuong Hub", 
-	Text = "Valid Key!!"
+	Text = "Valid Key!"
 	})
      wait(1)
 	loadstring(game:HttpGet(LinkScript))()
@@ -281,7 +287,7 @@ else
 	game.StarterGui:SetCore("SendNotification", {
 	Icon = "http://www.roblox.com/asset/?id=14432993177";
 	Title = "QTuong Hub", 
-	Text = "Invalid Key!!"
+	Text = "Invalid Key!"
 	})
 	TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 	TextBox.Text = "Paste Your Key Here..."
