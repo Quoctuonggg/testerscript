@@ -1,4 +1,4 @@
-LinkScript = "https://raw.githubusercontent.com/Quoctuonggg/quoctuongg/main/qtuongg.lua" --- điền cái link script vô, đây là ví dụ ---
+LinkScript = "https://raw.githubusercontent.com/Quoctuonggg/quoctuongg/main/qtuongg.lua" --- Điền Script Vào Đây ---
 ScreenGui = Instance.new("ScreenGui");
 Frame = Instance.new("Frame");
 UICorner = Instance.new("UICorner");
@@ -156,6 +156,14 @@ TextButton.BorderSizePixel = 0
 TextButton.Position = UDim2.new(0.0230769236, 0, 0.732600749, 0)
 TextButton.Size = UDim2.new(0, 180, 0, 62)
 TextButton.Parent = Frame
+TextButton.MouseButton1Click:Connect(function()
+game.StarterGui:SetCore("SendNotification", {
+Icon = "http://www.roblox.com/asset/?id=14432993177";
+Title = "QTuong Hub", 
+Text = "Copy Success!"
+})
+setclipboard("Key : qtuongcuto")
+end)
 
 UICorner6.CornerRadius = UDim.new(0, 3)
 UICorner6.Parent = TextButton
@@ -165,7 +173,7 @@ UIStroke5.Color = Color3.fromRGB(224, 29, 29)
 UIStroke5.Parent = TextButton
 
 TextButton1.Font = Enum.Font.GothamBold
-TextButton1.Text = "ENTER KEY"
+TextButton1.Text = "CHECK KEY"
 TextButton1.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextButton1.TextSize = 20
 TextButton1.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
@@ -212,30 +220,41 @@ function loadSettings()
 end
 
 loadSettings()
-getgenv().Key = "2"
+getgenv().Key = "1"
 
 if _G.Key1 == getgenv().Key then
-    TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
-    TextBox.Text = ""
-    TextBox.Text = "Wait 3s Check Key..."
-	TextBox.TextColor3 = Color3.fromRGB(255, 234, 0)
-	wait(3)
-	TextBox.Text = "Key Correct!"
+     TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+	TextBox.Text = ""
+	TextBox.Text = "Checking."
+	wait(0.5)
+	TextBox.Text = "Checking.."
+	wait(0.5)
+	TextBox.Text = "Checking..."
+	wait(0.5)
 	TextBox.TextColor3 = Color3.fromRGB(0, 255, 0)
-    loadstring(game:HttpGet(LinkScript))()
-    wait(1)
-    Frame.Visible = false
-else
-    TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
-    TextBox.Text = ""
-    TextBox.Text = "Wait 3s Check Key..."
-	TextBox.TextColor3 = Color3.fromRGB(255, 234, 0)
-	wait(3)
-	TextBox.Text = "Key Wrong!"
-	TextBox.TextColor3 = Color3.fromRGB(255, 0, 0)
+	TextBox.Text = "Key Correct!"
+	game.StarterGui:SetCore("SendNotification", {
+      Icon = "http://www.roblox.com/asset/?id=14432993177";
+      Title = "QTuong Hub", 
+      Text = "Key Success!"
+     })
 	wait(1)
-    TextBox.Text = "Paste Your Key Here..."
+     loadstring(game:HttpGet(LinkScript))()
+     Frame.Visible = false
+else
+     TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+     TextBox.Text = ""
+     TextBox.Text = "Checking."
+ 	wait(0.5)
+ 	TextBox.Text = "Checking.."
+	wait(0.5)
+	TextBox.Text = "Checking..."
+	wait(0.5)
+	TextBox.TextColor3 = Color3.fromRGB(255, 0, 0)
+	TextBox.Text = "Key Wrong!"
+	wait(1)
 	TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+	TextBox.Text = "Paste Your Key Here..."
 end
     TextButton1.MouseButton1Click:Connect(function()
 	local KeyInput = TextBox.Text
@@ -243,20 +262,27 @@ end
 	if KeyInput == CorrectKey then
         _G.Key1 = CorrectKey
         saveSettings()
-        TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+          TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 		TextBox.Text = ""
 		TextBox.Text = "Checking."
-		wait(0.5)
-		TextBox.Text = "Checking.."
-		wait(0.5)
-		TextBox.Text = "Checking..."
-		wait(0.5)
-		TextBox.TextColor3 = Color3.fromRGB(0, 255, 0)
-		TextBox.Text = "Key Correct!"
-        loadstring(game:HttpGet(LinkScript))()
-        wait(1)
-        Frame.Visible = false
+	     wait(0.5)
+	     TextBox.Text = "Checking.."
+	     wait(0.5)
+	     TextBox.Text = "Checking..."
+	     wait(0.5)
+	     TextBox.TextColor3 = Color3.fromRGB(0, 255, 0)
+	     TextBox.Text = "Key Correct!"
+	     game.StarterGui:SetCore("SendNotification", {
+          Icon = "http://www.roblox.com/asset/?id=14432993177";
+          Title = "QTuong Hub", 
+          Text = "Key Success!"
+          })
+	     wait(1)
+          loadstring(game:HttpGet(LinkScript))()
+          Frame.Visible = false
 	else
+     	TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+          TextBox.Text = ""
 		TextBox.Text = "Checking."
 		wait(0.5)
 		TextBox.Text = "Checking.."
