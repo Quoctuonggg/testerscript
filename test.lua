@@ -217,6 +217,7 @@ function loadSettings()
         _G = HttpService:JSONDecode(readfile(filename))
     end
 end
+
 loadSettings()
 getgenv().Key = "3"
 if _G.Key1 == getgenv().Key then
@@ -258,6 +259,7 @@ local KeyInput = TextBox.Text
 local CorrectKey = getgenv().Key
 if KeyInput == CorrectKey then
 	_G.Key1 = CorrectKey
+	loadSettings()
 	saveSettings()
 	TextBox.Text = ""
 	TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
