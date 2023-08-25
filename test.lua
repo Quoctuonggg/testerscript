@@ -1,4 +1,4 @@
-
+LinkScript = "https://raw.githubusercontent.com/Quoctuonggg/quoctuongg/main/qtuongg.lua" --- Điền Script Vào Đây ---
 ScreenGui = Instance.new("ScreenGui");
 Frame = Instance.new("Frame");
 UICorner = Instance.new("UICorner");
@@ -190,33 +190,109 @@ UICorner7.Parent = TextButton1
 UIStroke6.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 UIStroke6.Color = Color3.fromRGB(224, 29, 29)
 UIStroke6.Parent = TextButton1
---- Edit ---
-Frame.Active = true
-Frame.Draggable = true
 
---- Edit ---
 Frame.Active = true
 Frame.Draggable = true
-TextButton1.MouseButton1Down:Connect(function()
-	if TextBox.Text == "1" then--- dien key cua m vo
-		TextBox.Text = "Wait 3s Check Key..."
-		TextBox.TextColor3 = Color3.fromRGB(255, 234, 0)
-		wait(3)
-		TextBox.Text = "Key Correct!"
-		TextBox.TextColor3 = Color3.fromRGB(0, 255, 0)
-		game.StarterGui:SetCore("SendNotification", {
+local foldername = "QTuong Hub"
+local filename = "Keysystem.json"
+ 
+function saveSettings()
+    local HttpService = game:GetService("HttpService")
+    local json = HttpService:JSONEncode(_G)
+    if (writefile) then
+        if isfolder(foldername) then
+            if isfile(filename) then
+                writefile(filename, json)
+            else
+                writefile(filename, json)
+            end
+        else
+            writefile(filename, json)
+        end
+    end
+end
+
+function loadSettings()
+    local HttpService = game:GetService("HttpService")
+    if isfile(filename) then
+        _G = HttpService:JSONDecode(readfile(filename))
+    end
+end
+loadSettings()
+getgenv().Key = "1"
+Frame.Active = true
+Frame.Draggable = true
+if _G.Key1 == getgenv().Key then
+     TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+	TextBox.Text = ""
+	TextBox.Text = "Checking."
+	wait(0.5)
+	TextBox.Text = "Checking.."
+	wait(0.5)
+	TextBox.Text = "Checking..."
+	wait(0.5)
+	TextBox.TextColor3 = Color3.fromRGB(0, 255, 0)
+	TextBox.Text = "Key Correct!"
+	game.StarterGui:SetCore("SendNotification", {
+      Icon = "http://www.roblox.com/asset/?id=14432993177";
+      Title = "QTuong Hub", 
+      Text = "Key Success!"
+     })
+	wait(1)
+     loadstring(game:HttpGet(LinkScript))()
+     Frame.Visible = false
+else
+     TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+     TextBox.Text = ""
+     TextBox.Text = "Checking."
+ 	wait(0.5)
+ 	TextBox.Text = "Checking.."
+	wait(0.5)
+	TextBox.Text = "Checking..."
+	wait(0.5)
+	TextBox.TextColor3 = Color3.fromRGB(255, 0, 0)
+	TextBox.Text = "Key Wrong!"
+	wait(1)
+	TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+	TextBox.Text = "Paste Your Key Here..."
+end
+    TextButton1.MouseButton1Click:Connect(function()
+	local KeyInput = TextBox.Text
+	local CorrectKey = getgenv().Key
+	if KeyInput == CorrectKey then
+        _G.Key1 = CorrectKey
+        saveSettings()
+          TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+		TextBox.Text = ""
+		TextBox.Text = "Checking."
+	     wait(0.5)
+	     TextBox.Text = "Checking.."
+	     wait(0.5)
+	     TextBox.Text = "Checking..."
+	     wait(0.5)
+	     TextBox.TextColor3 = Color3.fromRGB(0, 255, 0)
+	     TextBox.Text = "Key Correct!"
+	     game.StarterGui:SetCore("SendNotification", {
           Icon = "http://www.roblox.com/asset/?id=14432993177";
           Title = "QTuong Hub", 
           Text = "Key Success!"
           })
 	     wait(1)
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/Quoctuonggg/quoctuongg/main/qtuongg.lua"))()
-		Frame.Visible = false
+          loadstring(game:HttpGet(LinkScript))()
+          Frame.Visible = false
 	else
-		TextBox.Text = "Wait 3s Check Key..."
-		TextBox.TextColor3 = Color3.fromRGB(255, 234, 0)
-		wait(3)
+     	TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+          TextBox.Text = ""
+		TextBox.Text = "Checking."
+		wait(0.5)
+		TextBox.Text = "Checking.."
+		wait(0.5)
+		TextBox.Text = "Checking..."
+		wait(0.5)
+		TextBox.TextColor3 = Color3.fromRGB(255, 0, 0)
 		TextBox.Text = "Key Wrong!"
-		TextBox.TextColor3 = Color3.fromRGB(255, 0, 4)
+		wait(1)
+		TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+		TextBox.Text = "Paste Your Key Here..."
 	end
 end)
