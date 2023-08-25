@@ -218,7 +218,7 @@ function loadSettings()
     end
 end
 loadSettings()
-getgenv().Key = "2"
+getgenv().Key = "3"
 if _G.Key1 == getgenv().Key then
      TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 	TextBox.Text = ""
