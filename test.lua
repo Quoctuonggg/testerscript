@@ -213,14 +213,6 @@ function saveSettings()
     end
 end
 
-function loadSettings()
-    local HttpService = game:GetService("HttpService")
-    if isfile(filename) then
-        _G = HttpService:JSONDecode(readfile(filename))
-    end
-end
-
-loadSettings()
 getgenv().Key = "1"
 if _G.Key1 == getgenv().Key then
 		TextBox.Text = ""
@@ -250,7 +242,7 @@ if _G.Key1 == getgenv().Key then
 		TextBox.TextColor3 = Color3.fromRGB(255, 0, 0)
 		TextBox.Text = "Invalid Key!!"
 end
-    TextButton1.MouseButton1Click:Connect(function()
+    TextButton1.MouseButton1Down:Connect(function()
 	local KeyInput = TextBox.Text
 	local CorrectKey = getgenv().Key
 	if KeyInput == CorrectKey then
