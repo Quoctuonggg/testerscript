@@ -26,9 +26,9 @@ TextButton1 = Instance.new("TextButton");
 UICorner7 = Instance.new("UICorner");
 UIStroke6 = Instance.new("UIStroke");
 
-
+ScreenGui.Name = "ScreenGui"
+ScreenGui.Parent = game.CoreGui
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-ScreenGui.Parent = game:GetService("CoreGui")
 
 Frame.AnchorPoint = Vector2.new(0.5, 0.5)
 Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
@@ -99,7 +99,7 @@ UIStroke3.Color = Color3.fromRGB(224, 29, 29)
 UIStroke3.Parent = Frame3
 
 TextLabel.Font = Enum.Font.GothamBold
-TextLabel.Text = "QTuong Hub "
+TextLabel.Text = "QTuong Hub"
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.TextSize = 25
 TextLabel.TextXAlignment = Enum.TextXAlignment.Left
@@ -190,7 +190,6 @@ UICorner7.Parent = TextButton1
 UIStroke6.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 UIStroke6.Color = Color3.fromRGB(224, 29, 29)
 UIStroke6.Parent = TextButton1
-
 --- Edit ---
 Frame.Active = true
 Frame.Draggable = true
@@ -213,34 +212,47 @@ function saveSettings()
     end
 end
 
-getgenv().Key = "1"
+function loadSettings()
+    local HttpService = game:GetService("HttpService")
+    if isfile(filename) then
+        _G = HttpService:JSONDecode(readfile(filename))
+    end
+end
+
+loadSettings()
+getgenv().Key = "qtuongcuto"
+
 if _G.Key1 == getgenv().Key then
-		TextBox.Text = ""
-		TextBox.Text = "Checking."
-	     wait(0.5)
-	     TextBox.Text = "Checking.."
-	     wait(0.5)
-	     TextBox.Text = "Checking..."
-	     wait(0.5)
-          TextBox.TextColor3 = Color3.fromRGB(0, 255, 0)
-	     TextBox.Text = "Valid Key!!"
-	     game.StarterGui:SetCore("SendNotification", {
-          Icon = "http://www.roblox.com/asset/?id=14432993177";
-          Title = "QTuong Hub", 
-          Text = "Key Success!"
-          })
-	     wait(1)
-          loadstring(game:HttpGet(LinkScript))()
-          Frame.Visible = false
-      else
-		TextBox.Text = "Checking."
-		wait(0.5)
-		TextBox.Text = "Checking.."
-		wait(0.5)
-		TextBox.Text = "Checking..."
-		wait(0.5)
-		TextBox.TextColor3 = Color3.fromRGB(255, 0, 0)
-		TextBox.Text = "Invalid Key!!"
+	TextBox.Text = ""
+	TextBox.Text = "Checking."
+	wait(0.5)
+	TextBox.Text = "Checking.."
+	wait(0.5)
+	TextBox.Text = "Checking..."
+	wait(0.5)
+	TextBox.Text = "Valid Key!!"
+	TextBox.TextColor3 = Color3.fromRGB(0, 255, 0)
+	game.StarterGui:SetCore("SendNotification", {
+      Icon = "http://www.roblox.com/asset/?id=14432993177";
+      Title = "QTuong Hub", 
+      Text = "Key Success!"
+     })
+	wait(1)
+     loadstring(game:HttpGet(LinkScript))()
+     Frame.Visible = false
+else
+     TextBox.Text = ""
+     TextBox.Text = "Checking."
+ 	wait(0.5)
+ 	TextBox.Text = "Checking.."
+	wait(0.5)
+	TextBox.Text = "Checking..."
+	wait(0.5)
+	TextBox.Text = "Invalid Key!!"
+	TextBox.TextColor3 = Color3.fromRGB(255, 0, 0)
+     wait(1)
+	TextBox.Text = "Paste Your Key Here..."
+	TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 end
     TextButton1.MouseButton1Click:Connect(function()
 	local KeyInput = TextBox.Text
@@ -255,8 +267,8 @@ end
 	     wait(0.5)
 	     TextBox.Text = "Checking..."
 	     wait(0.5)
-          TextBox.TextColor3 = Color3.fromRGB(0, 255, 0)
 	     TextBox.Text = "Valid Key!!"
+          TextBox.TextColor3 = Color3.fromRGB(0, 255, 0)
 	     game.StarterGui:SetCore("SendNotification", {
           Icon = "http://www.roblox.com/asset/?id=14432993177";
           Title = "QTuong Hub", 
@@ -266,13 +278,17 @@ end
           loadstring(game:HttpGet(LinkScript))()
           Frame.Visible = false
 	else
+	     TextBox.Text = ""
 		TextBox.Text = "Checking."
 		wait(0.5)
 		TextBox.Text = "Checking.."
 		wait(0.5)
 		TextBox.Text = "Checking..."
 		wait(0.5)
-		TextBox.TextColor3 = Color3.fromRGB(255, 0, 0)
 		TextBox.Text = "Invalid Key!!"
+		TextBox.TextColor3 = Color3.fromRGB(255, 0, 0)
+		wait(1)
+		TextBox.Text = "Paste Your Key Here..."
+		TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 	end
 end)
