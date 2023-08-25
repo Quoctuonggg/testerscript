@@ -1,6 +1,5 @@
 
 
-LinkScript = "https://raw.githubusercontent.com/Quoctuonggg/quoctuongg/main/qtuongg.lua" --- điền cái link script vô, đây là ví dụ ---
 ScreenGui = Instance.new("ScreenGui");
 Frame = Instance.new("Frame");
 UICorner = Instance.new("UICorner");
@@ -28,9 +27,9 @@ TextButton1 = Instance.new("TextButton");
 UICorner7 = Instance.new("UICorner");
 UIStroke6 = Instance.new("UIStroke");
 
-ScreenGui.Name = "ScreenGui"
-ScreenGui.Parent = game.CoreGui
+
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.Parent = game:GetService("CoreGui")
 
 Frame.AnchorPoint = Vector2.new(0.5, 0.5)
 Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
@@ -102,7 +101,7 @@ UIStroke3.Parent = Frame3
 
 TextLabel.Font = Enum.Font.GothamBold
 TextLabel.Text = "QTuong Hub"
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextColor3 = Color3.fromRGB(224, 29, 29)
 TextLabel.TextSize = 25
 TextLabel.TextXAlignment = Enum.TextXAlignment.Left
 TextLabel.BackgroundColor3 = Color3.fromRGB(224, 29, 29)
@@ -131,7 +130,7 @@ TextLabel1.Parent = Frame3
 TextBox.CursorPosition = -1
 TextBox.Font = Enum.Font.Gotham
 TextBox.Text = "Paste Your Key Here..."
-TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.TextColor3 = Color3.fromRGB(224, 29, 29)
 TextBox.TextSize = 20
 TextBox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 TextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -149,7 +148,7 @@ UIStroke4.Parent = TextBox
 
 TextButton.Font = Enum.Font.GothamBold
 TextButton.Text = "GET KEY"
-TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.TextColor3 = Color3.fromRGB(224, 29, 29)
 TextButton.TextSize = 20
 TextButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 TextButton.BackgroundTransparency = 0.8999999761581421
@@ -168,7 +167,7 @@ UIStroke5.Parent = TextButton
 
 TextButton1.Font = Enum.Font.GothamBold
 TextButton1.Text = "CHECK KEY"
-TextButton1.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton1.TextColor3 = Color3.fromRGB(224, 29, 29)
 TextButton1.TextSize = 20
 TextButton1.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 TextButton1.BackgroundTransparency = 0.8999999761581421
@@ -184,91 +183,22 @@ UICorner7.Parent = TextButton1
 UIStroke6.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 UIStroke6.Color = Color3.fromRGB(224, 29, 29)
 UIStroke6.Parent = TextButton1
+
 --- Edit ---
 Frame.Active = true
 Frame.Draggable = true
-local foldername = "QTuong Hub"
-local filename = "Keysystem.json"
- 
-function saveSettings()
-    local HttpService = game:GetService("HttpService")
-    local json = HttpService:JSONEncode(_G)
-    if (writefile) then
-        if isfolder(foldername) then
-            if isfile(filename) then
-                writefile(filename, json)
-            else
-                writefile(filename, json)
-            end
-        else
-            writefile(filename, json)
-        end
-    end
-end
-
-function loadSettings()
-    local HttpService = game:GetService("HttpService")
-    if isfile(filename) then
-        _G = HttpService:JSONDecode(readfile(filename))
-    end
-end
-
-loadSettings()
-getgenv().Key = "2"
-
-if _G.Key1 == getgenv().Key then
-    TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
-    TextBox.Text = ""
-    TextBox.Text = "Wait 3s Check Key..."
-	TextBox.TextColor3 = Color3.fromRGB(255, 234, 0)
-	wait(3)
-	TextBox.Text = "Key Correct!"
-	TextBox.TextColor3 = Color3.fromRGB(0, 255, 0)
-    loadstring(game:HttpGet(LinkScript))()
-    wait(1)
-    Frame.Visible = false
-else
-    TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
-    TextBox.Text = ""
-    TextBox.Text = "Wait 3s Check Key..."
-	TextBox.TextColor3 = Color3.fromRGB(255, 234, 0)
-	wait(3)
-	TextBox.Text = "Key Wrong!"
-	TextBox.TextColor3 = Color3.fromRGB(255, 0, 0)
-	wait(1)
-    TextBox.Text = "Paste Your Key Here..."
-	TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
-end
-    TextButton1.MouseButton1Click:Connect(function()
-	local KeyInput = TextBox.Text
-	local CorrectKey = getgenv().Key
-	if KeyInput == CorrectKey then
-        _G.Key1 = CorrectKey
-        saveSettings()
-        TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
-		TextBox.Text = ""
-		TextBox.Text = "Checking."
-		wait(0.5)
-		TextBox.Text = "Checking.."
-		wait(0.5)
-		TextBox.Text = "Checking..."
-		wait(0.5)
-		TextBox.TextColor3 = Color3.fromRGB(0, 255, 0)
+TextButton1.MouseButton1Down:Connect(function()
+	if TextBox.Text == "1" then--- dien key cua m vo
+		TextBox.Text = "Wait 3s Check Key..."
+		TextBox.TextColor3 = Color3.fromRGB(255, 234, 0)
+		wait(3)
 		TextBox.Text = "Key Correct!"
-        loadstring(game:HttpGet(LinkScript))()
-        wait(1)
-        Frame.Visible = false
+		TextBox.TextColor3 = Color3.fromRGB(0, 255, 0)
 	else
-		TextBox.Text = "Checking."
-		wait(0.5)
-		TextBox.Text = "Checking.."
-		wait(0.5)
-		TextBox.Text = "Checking..."
-		wait(0.5)
-		TextBox.TextColor3 = Color3.fromRGB(255, 0, 0)
+		TextBox.Text = "Wait 3s Check Key..."
+		TextBox.TextColor3 = Color3.fromRGB(255, 234, 0)
+		wait(3)
 		TextBox.Text = "Key Wrong!"
-		wait(1)
-		TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
-		TextBox.Text = "Paste Your Key Here..."
+		TextBox.TextColor3 = Color3.fromRGB(255, 0, 4)
 	end
 end)
