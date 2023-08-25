@@ -212,15 +212,6 @@ function saveSettings()
         end
     end
 end
-function loadSettings()
-    local HttpService = game:GetService("HttpService")
-    if isfile(filename) then
-        _G = HttpService:JSONDecode(readfile(filename))
-    end
-end
-
-loadSettings()
-
 getgenv().Key = "1"
 if _G.Key1 == getgenv().Key then
 		TextBox.Text = ""
