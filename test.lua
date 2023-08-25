@@ -1,5 +1,4 @@
 
-
 ScreenGui = Instance.new("ScreenGui");
 Frame = Instance.new("Frame");
 UICorner = Instance.new("UICorner");
@@ -27,9 +26,9 @@ TextButton1 = Instance.new("TextButton");
 UICorner7 = Instance.new("UICorner");
 UIStroke6 = Instance.new("UIStroke");
 
-
+ScreenGui.Name = "ScreenGui"
+ScreenGui.Parent = game.CoreGui
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-ScreenGui.Parent = game:GetService("CoreGui")
 
 Frame.AnchorPoint = Vector2.new(0.5, 0.5)
 Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
@@ -101,7 +100,7 @@ UIStroke3.Parent = Frame3
 
 TextLabel.Font = Enum.Font.GothamBold
 TextLabel.Text = "QTuong Hub"
-TextLabel.TextColor3 = Color3.fromRGB(224, 29, 29)
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.TextSize = 25
 TextLabel.TextXAlignment = Enum.TextXAlignment.Left
 TextLabel.BackgroundColor3 = Color3.fromRGB(224, 29, 29)
@@ -130,7 +129,7 @@ TextLabel1.Parent = Frame3
 TextBox.CursorPosition = -1
 TextBox.Font = Enum.Font.Gotham
 TextBox.Text = "Paste Your Key Here..."
-TextBox.TextColor3 = Color3.fromRGB(224, 29, 29)
+TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextBox.TextSize = 20
 TextBox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 TextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -148,7 +147,7 @@ UIStroke4.Parent = TextBox
 
 TextButton.Font = Enum.Font.GothamBold
 TextButton.Text = "GET KEY"
-TextButton.TextColor3 = Color3.fromRGB(224, 29, 29)
+TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextButton.TextSize = 20
 TextButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 TextButton.BackgroundTransparency = 0.8999999761581421
@@ -157,6 +156,14 @@ TextButton.BorderSizePixel = 0
 TextButton.Position = UDim2.new(0.0230769236, 0, 0.732600749, 0)
 TextButton.Size = UDim2.new(0, 180, 0, 62)
 TextButton.Parent = Frame
+TextButton.MouseButton1Click:Connect(function()
+game.StarterGui:SetCore("SendNotification", {
+Icon = "http://www.roblox.com/asset/?id=14432993177";
+Title = "QTuong Hub", 
+Text = "Copy Success!"
+})
+setclipboard("Key : qtuongcuto")
+end)
 
 UICorner6.CornerRadius = UDim.new(0, 3)
 UICorner6.Parent = TextButton
@@ -167,7 +174,7 @@ UIStroke5.Parent = TextButton
 
 TextButton1.Font = Enum.Font.GothamBold
 TextButton1.Text = "CHECK KEY"
-TextButton1.TextColor3 = Color3.fromRGB(224, 29, 29)
+TextButton1.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextButton1.TextSize = 20
 TextButton1.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 TextButton1.BackgroundTransparency = 0.8999999761581421
@@ -183,6 +190,9 @@ UICorner7.Parent = TextButton1
 UIStroke6.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 UIStroke6.Color = Color3.fromRGB(224, 29, 29)
 UIStroke6.Parent = TextButton1
+--- Edit ---
+Frame.Active = true
+Frame.Draggable = true
 
 --- Edit ---
 Frame.Active = true
@@ -194,6 +204,14 @@ TextButton1.MouseButton1Down:Connect(function()
 		wait(3)
 		TextBox.Text = "Key Correct!"
 		TextBox.TextColor3 = Color3.fromRGB(0, 255, 0)
+		game.StarterGui:SetCore("SendNotification", {
+          Icon = "http://www.roblox.com/asset/?id=14432993177";
+          Title = "QTuong Hub", 
+          Text = "Key Success!"
+          })
+	     wait(1)
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Quoctuonggg/quoctuongg/main/qtuongg.lua"))()
+		Frame.Visible = false
 	else
 		TextBox.Text = "Wait 3s Check Key..."
 		TextBox.TextColor3 = Color3.fromRGB(255, 234, 0)
