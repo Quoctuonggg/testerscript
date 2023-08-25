@@ -232,7 +232,7 @@ if _G.Key1 == getgenv().Key then
 	TextBox.Text = "Checking..."
 	wait(0.5)
 	TextBox.TextColor3 = Color3.fromRGB(0, 255, 0)
-	TextBox.Text = "Key Correct!"
+	TextBox.Text = "Valid Key!!"
 	game.StarterGui:SetCore("SendNotification", {
       Icon = "http://www.roblox.com/asset/?id=14432993177";
       Title = "QTuong Hub", 
@@ -251,7 +251,7 @@ else
 	TextBox.Text = "Checking..."
 	wait(0.5)
 	TextBox.TextColor3 = Color3.fromRGB(255, 0, 0)
-	TextBox.Text = "Key Wrong!"
+	TextBox.Text = "Invalid Key!!"
 	wait(1)
 	TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 	TextBox.Text = "Paste Your Key Here..."
@@ -271,7 +271,7 @@ end
 	     TextBox.Text = "Checking..."
 	     wait(0.5)
 	     TextBox.TextColor3 = Color3.fromRGB(0, 255, 0)
-	     TextBox.Text = "Key Correct!"
+	     TextBox.Text = "Valid Key!!"
 	     game.StarterGui:SetCore("SendNotification", {
           Icon = "http://www.roblox.com/asset/?id=14432993177";
           Title = "QTuong Hub", 
@@ -290,7 +290,7 @@ end
 		TextBox.Text = "Checking..."
 		wait(0.5)
 		TextBox.TextColor3 = Color3.fromRGB(255, 0, 0)
-		TextBox.Text = "Key Wrong!"
+		TextBox.Text = "Invalid Key!!"
 		wait(1)
 		TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 		TextBox.Text = "Paste Your Key Here..."
