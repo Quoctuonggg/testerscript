@@ -220,7 +220,7 @@ function loadSettings()
 end
 
 loadSettings()
-getgenv().Key = "1"
+getgenv().Key = "qtuongcuto"
 
 if _G.Key1 == getgenv().Key then
      TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -252,6 +252,9 @@ else
 	wait(0.5)
 	TextBox.TextColor3 = Color3.fromRGB(255, 0, 0)
 	TextBox.Text = "Key Wrong!"
+	wait(1)
+	TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+	TextBox.Text = "Paste Your Key Here..."
 end
     TextButton1.MouseButton1Click:Connect(function()
 	local KeyInput = TextBox.Text
@@ -288,5 +291,8 @@ end
 		wait(0.5)
 		TextBox.TextColor3 = Color3.fromRGB(255, 0, 0)
 		TextBox.Text = "Key Wrong!"
+		wait(1)
+		TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+		TextBox.Text = "Paste Your Key Here..."
 	end
 end)
