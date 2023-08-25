@@ -243,6 +243,9 @@ if _G.Key1 == getgenv().Key then
 		wait(0.5)
 		TextBox.TextColor3 = Color3.fromRGB(255, 0, 0)
 		TextBox.Text = "Invalid Key!!"
+          wait(1)
+		TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+		TextBox.Text = "Paste Your Key Here..."
 end
     TextButton1.MouseButton1Down:Connect(function()
 	local KeyInput = TextBox.Text
