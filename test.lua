@@ -222,7 +222,6 @@ loadSettings()
 getgenv().Key = "2"
 if _G.Key1 == getgenv().Key then
 		TextBox.Text = ""
-          TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 		TextBox.Text = "Checking."
 	     wait(0.5)
 	     TextBox.Text = "Checking.."
@@ -241,7 +240,6 @@ if _G.Key1 == getgenv().Key then
           Frame.Visible = false
       else
           TextBox.Text = ""
-          TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 		TextBox.Text = "Checking."
 		wait(0.5)
 		TextBox.Text = "Checking.."
@@ -261,7 +259,6 @@ end
         _G.Key1 = CorrectKey
         saveSettings()
 		TextBox.Text = ""
-          TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 		TextBox.Text = "Checking."
 	     wait(0.5)
 	     TextBox.Text = "Checking.."
@@ -280,7 +277,6 @@ end
           Frame.Visible = false
 	else
 	     TextBox.Text = ""
-          TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 		TextBox.Text = "Checking."
 		wait(0.5)
 		TextBox.Text = "Checking.."
