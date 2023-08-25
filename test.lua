@@ -212,15 +212,9 @@ function saveSettings()
         end
     end
 end
-function loadSettings()
-    local HttpService = game:GetService("HttpService")
-    if isfile(filename) then
-        _G = HttpService:JSONDecode(readfile(filename))
-    end
-end
-loadSettings()
 getgenv().Key = "2"
 if _G.Key1 == getgenv().Key then
+          TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 		TextBox.Text = ""
 		TextBox.Text = "Checking."
 	     wait(0.5)
@@ -228,8 +222,8 @@ if _G.Key1 == getgenv().Key then
 	     wait(0.5)
 	     TextBox.Text = "Checking..."
 	     wait(0.5)
-	     TextBox.Text = "Valid Key!!"
           TextBox.TextColor3 = Color3.fromRGB(0, 255, 0)
+	     TextBox.Text = "Valid Key!!"
 	     game.StarterGui:SetCore("SendNotification", {
           Icon = "http://www.roblox.com/asset/?id=14432993177";
           Title = "QTuong Hub", 
@@ -239,6 +233,7 @@ if _G.Key1 == getgenv().Key then
           loadstring(game:HttpGet(LinkScript))()
           Frame.Visible = false
       else
+          TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
           TextBox.Text = ""
 		TextBox.Text = "Checking."
 		wait(0.5)
@@ -246,11 +241,8 @@ if _G.Key1 == getgenv().Key then
 		wait(0.5)
 		TextBox.Text = "Checking..."
 		wait(0.5)
-		TextBox.Text = "Invalid Key!!"
 		TextBox.TextColor3 = Color3.fromRGB(255, 0, 0)
-		wait(1)
-		TextBox.Text = "Paste Your Key Here..."
-		TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+		TextBox.Text = "Invalid Key!!"
 end
     TextButton1.MouseButton1Down:Connect(function()
 	local KeyInput = TextBox.Text
@@ -259,6 +251,7 @@ end
         _G.Key1 = CorrectKey
         saveSettings()
 		TextBox.Text = ""
+          TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 		TextBox.Text = "Checking."
 	     wait(0.5)
 	     TextBox.Text = "Checking.."
@@ -276,17 +269,18 @@ end
           loadstring(game:HttpGet(LinkScript))()
           Frame.Visible = false
 	else
-	     TextBox.Text = ""
+          TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+          TextBox.Text = ""
 		TextBox.Text = "Checking."
 		wait(0.5)
 		TextBox.Text = "Checking.."
 		wait(0.5)
 		TextBox.Text = "Checking..."
 		wait(0.5)
-		TextBox.Text = "Invalid Key!!"
 		TextBox.TextColor3 = Color3.fromRGB(255, 0, 0)
-		wait(1)
-		TextBox.Text = "Paste Your Key Here..."
+		TextBox.Text = "Invalid Key!!"
+	     wait(1)
 		TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+		TextBox.Text = "Paste Your Key Here..."
 	end
 end)
