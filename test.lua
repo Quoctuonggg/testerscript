@@ -232,14 +232,18 @@ if _G.Key1 == getgenv().Key then
           loadstring(game:HttpGet(LinkScript))()
           Frame.Visible = false
       else
+          TextBox.Text = ""
 		TextBox.Text = "Checking."
 		wait(0.5)
 		TextBox.Text = "Checking.."
 		wait(0.5)
 		TextBox.Text = "Checking..."
 		wait(0.5)
-		TextBox.TextColor3 = Color3.fromRGB(255, 0, 0)
 		TextBox.Text = "Invalid Key!!"
+		TextBox.TextColor3 = Color3.fromRGB(255, 0, 0)
+		wait(1)
+		TextBox.Text = "Paste Your Key Here..."
+		TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 end
     TextButton1.MouseButton1Down:Connect(function()
 	local KeyInput = TextBox.Text
@@ -265,6 +269,7 @@ end
           loadstring(game:HttpGet(LinkScript))()
           Frame.Visible = false
 	else
+	     TextBox.Text = ""
 		TextBox.Text = "Checking."
 		wait(0.5)
 		TextBox.Text = "Checking.."
@@ -273,5 +278,8 @@ end
 		wait(0.5)
 		TextBox.Text = "Invalid Key!!"
 		TextBox.TextColor3 = Color3.fromRGB(255, 0, 0)
+		wait(1)
+		TextBox.Text = "Paste Your Key Here..."
+		TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 	end
 end)
