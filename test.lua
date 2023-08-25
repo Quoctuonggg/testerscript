@@ -173,7 +173,7 @@ UIStroke5.Color = Color3.fromRGB(224, 29, 29)
 UIStroke5.Parent = TextButton
 
 TextButton1.Font = Enum.Font.GothamBold
-TextButton1.Text = "CHECK KEY"
+TextButton1.Text = "ENTER KEY"
 TextButton1.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextButton1.TextSize = 20
 TextButton1.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
