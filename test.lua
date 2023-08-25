@@ -212,7 +212,7 @@ function saveSettings()
         end
     end
 end
-getgenv().Key = "1"
+getgenv().Key = "2"
 if _G.Key1 == getgenv().Key then
 		TextBox.Text = ""
 		TextBox.Text = "Checking."
@@ -241,7 +241,7 @@ if _G.Key1 == getgenv().Key then
 		TextBox.TextColor3 = Color3.fromRGB(255, 0, 0)
 		TextBox.Text = "Invalid Key!!"
 end
-    TextButton1.MouseButton1Click:Connect(function()
+    TextButton1.MouseButton1Down:Connect(function()
 	local KeyInput = TextBox.Text
 	local CorrectKey = getgenv().Key
 	if KeyInput == CorrectKey then
@@ -271,7 +271,7 @@ end
 		wait(0.5)
 		TextBox.Text = "Checking..."
 		wait(0.5)
-		TextBox.TextColor3 = Color3.fromRGB(255, 0, 0)
 		TextBox.Text = "Invalid Key!!"
+		TextBox.TextColor3 = Color3.fromRGB(255, 0, 0)
 	end
 end)
